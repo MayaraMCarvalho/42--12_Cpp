@@ -6,12 +6,12 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:44:22 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/21 16:04:28 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/21 16:27:00 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Account.hpp"
-#include <iostream> //
+#include <iostream>
 #include <ctime>
 #include <iomanip>
 #include <sstream>
@@ -24,12 +24,12 @@ int	Account::_totalNbWithdrawals = 0;
 
 static std::string getTime(void)
 {
-	std::time_t			currentTime;
+	std::time_t			now;
 	std::tm				*timeInfo;
 	std::ostringstream	fileName;
 
-	currentTime = std::time(NULL);
-	timeInfo = std::localtime(&currentTime);
+	now = std::time(NULL);
+	timeInfo = std::localtime(&now);
 
 	fileName << std::setw(4) << std::setfill('0') << (timeInfo->tm_year + 1900)
 			<< std::setw(2) << std::setfill('0') << (timeInfo->tm_mon + 1)
@@ -59,10 +59,10 @@ Account::Account (int initial_deposit)
 {
 	std::ostringstream	text;
 
-	this->_amount = initial_deposit;
-	this->_accountIndex = _nbAccounts;
-	this->_nbDeposits = 0;
-	this->_nbWithdrawals = 0;
+	_amount = initial_deposit;
+	_accountIndex = _nbAccounts;
+	_nbDeposits = 0;
+	_nbWithdrawals = 0;
 	_totalAmount += initial_deposit;
 	_nbAccounts++;
 	_displayTimestamp();
@@ -74,10 +74,6 @@ Account::~Account(void)
 {
 	std::ostringstream	text;
 
-	_nbAccounts--;
-	_totalAmount -= _amount;
-	_totalNbDeposits -= _nbDeposits;
-	_totalNbWithdrawals -= _nbWithdrawals;
 	_displayTimestamp();
 	text << "index:" << _accountIndex << ";amount:" << _amount << ";closed\n";
 	logFile(text.str());
@@ -120,8 +116,8 @@ void	Account::makeDeposit(int deposit)
 	int					initAmount;
 
 	initAmount = _amount;
-	this->_amount += deposit;
-	this->_nbDeposits++;
+	_amount += deposit;
+	_nbDeposits++;
 	_totalAmount += deposit;
 	_totalNbDeposits++;
 	_displayTimestamp();
@@ -139,23 +135,20 @@ bool	Account::makeWithdrawal(int withdrawal)
 	text << "index:" << _accountIndex
 		<< ";p_amount:" << initAmount << ";withdrawal:";
 	_displayTimestamp();
-	if (withdrawal <= _amount)
-	{
-		this->_amount -=withdrawal;
-		this->_nbWithdrawals++;
-		_totalAmount -= withdrawal;
-		_totalNbWithdrawals++;
-		text << withdrawal << ";amount:" << _amount
-			<< ";nb_withdrawals:" << _nbWithdrawals << "\n";
-		logFile(text.str());
-		return (true);
-	}
-	else
+	if (withdrawal > _amount)
 	{
 		text << "refused" << "\n";
 		logFile(text.str());
 		return (false);
 	}
+	_amount -=withdrawal;
+	_nbWithdrawals++;
+	_totalAmount -= withdrawal;
+	_totalNbWithdrawals++;
+	text << withdrawal << ";amount:" << _amount
+		<< ";nb_withdrawals:" << _nbWithdrawals << "\n";
+	logFile(text.str());
+	return (true);
 }
 int		Account::checkAmount(void) const
 {
@@ -174,8 +167,8 @@ void	Account::displayStatus(void) const
 
 void	Account::_displayTimestamp(void)
 {
-	std::string	time;
+	std::string	text;
 
-	time = "[" + getTime() + "] ";
-	logFile(time);
+	text = "[" + getTime() + "] ";
+	logFile(text);
 }
