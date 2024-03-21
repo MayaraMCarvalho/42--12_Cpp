@@ -6,13 +6,12 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/03/20 21:34:38 by macarval         ###   ########.fr        #
+#    Updated: 2024/03/20 22:00:58 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= phonebook
-
-SRCS		= main.cpp PhoneBook.cpp Contact.cpp Utils.cpp
+SRCS		= main.cpp PhoneBook.cpp Contact.cpp utils.cpp
 
 VPATH		= src/
 OBJS_PATH	= obj
