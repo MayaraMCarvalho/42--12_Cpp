@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 18:43:39 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/20 21:10:13 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/20 22:55:29 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,27 +20,27 @@ Contact::~Contact(void)
 {
 }
 
-std::string	Contact::getFirstName(void)
+std::string	Contact::getFirstName(void) const
 {
 	return (firstName);
 }
 
-std::string	Contact::getLastName(void)
+std::string	Contact::getLastName(void) const
 {
 	return (lastName);
 }
 
-std::string	Contact::getNickname(void)
+std::string	Contact::getNickname(void) const
 {
 	return (nickname);
 }
 
-std::string	Contact::getNumber(void)
+std::string	Contact::getNumber(void) const
 {
 	return (number);
 }
 
-std::string	Contact::getDarkSecret(void)
+std::string	Contact::getDarkSecret(void) const
 {
 	return (darkSecret);
 }

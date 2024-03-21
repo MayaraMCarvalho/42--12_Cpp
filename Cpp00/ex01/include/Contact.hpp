@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 18:44:49 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/20 21:19:44 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/20 22:52:03 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ class Contact
 		Contact(void);
 		~Contact(void);
 
-		std::string	getNumber(void);
-		std::string	getLastName(void);
-		std::string	getNickname(void);
-		std::string	getFirstName(void);
-		std::string	getDarkSecret(void);
+		std::string	getNumber(void) const;
+		std::string	getLastName(void) const;
+		std::string	getNickname(void) const;
+		std::string	getFirstName(void) const;
+		std::string	getDarkSecret(void) const;
 
 		void setFirstName(std::string firstName);
 		void setLastName(std::string lastName);

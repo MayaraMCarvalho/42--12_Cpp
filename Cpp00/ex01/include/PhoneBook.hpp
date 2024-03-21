@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 18:44:47 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/20 21:28:32 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/20 22:54:26 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,12 @@ class PhoneBook
 		~PhoneBook(void);
 
 		void		add(void);
-		void		search(void);
-		void		searchContact(void);
-		void		printContact(int index);
-		std::string	getInfo(std::string text);
+		void		search(void) const;
+		void		searchContact(void) const;
 		void		saveContact(Contact contact);
-		void		printSearch(std::string text);
+		void		printContact(int index) const;
+		std::string	getInfo(std::string text) const;
+		void		printSearch(std::string text) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 18:43:45 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/20 21:33:38 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/20 22:55:37 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	PhoneBook::add(void)
 	std::cout << GREEN << "Contact added successfully!\n" << std::endl;
 }
 
-void	PhoneBook::search(void)
+void	PhoneBook::search(void) const
 {
 	std::cout << GRAY;
 	std::cout << "|  Index  |   Name   | LastName | Nickname |" << std::endl;

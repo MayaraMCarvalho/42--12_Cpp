@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Utils.cpp                                          :+:      :+:    :+:   */
+/*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 21:32:45 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/20 21:33:28 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/20 22:56:03 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-std::string	PhoneBook::getInfo(std::string text)
+std::string	PhoneBook::getInfo(std::string text) const
 {
 	std::string info;
 	while(true)
@@ -39,7 +39,7 @@ void	PhoneBook::saveContact(Contact contact)
 		contacts[size++] = contact;
 }
 
-void	PhoneBook::printSearch(std::string text)
+void	PhoneBook::printSearch(std::string text) const
 {
 	if (text.length() > 10)
 	{
@@ -55,7 +55,7 @@ void	PhoneBook::printSearch(std::string text)
 	std::cout << "|";
 }
 
-void	PhoneBook::searchContact(void)
+void	PhoneBook::searchContact(void) const
 {
 	int	index;
 
@@ -74,7 +74,7 @@ void	PhoneBook::searchContact(void)
 	}
 }
 
-void	PhoneBook::printContact(int index)
+void	PhoneBook::printContact(int index) const
 {
 	std::cout << GRAY << "First Name: ";
 	std::cout << CYAN << contacts[index].getFirstName() << std::endl;
