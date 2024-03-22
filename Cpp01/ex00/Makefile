@@ -6,7 +6,7 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/03/22 09:22:36 by macarval         ###   ########.fr        #
+#    Updated: 2024/03/22 11:42:40 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,16 @@ fclean:		clean
 			@echo "$(CYAN)$(NAME): $(GREEN)Full clean done!$(RESET)"
 
 
-re:			fclean all
+ re:			fclean all
 
-.PHONY:		all re clean fclean
+comp:
+			clear
+			@make -s re
+			@./$(NAME)
+
+val:
+			clear
+			@make -s re
+			@valgrind ./$(NAME)
+
+.PHONY:		all re clean fclean comp val

@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randomChump.cpp                                    :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/21 21:45:27 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/22 11:32:01 by macarval         ###   ########.fr       */
+/*   Created: 2024/03/22 14:29:56 by macarval          #+#    #+#             */
+/*   Updated: 2024/03/22 17:04:14 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-void	randomChump( std::string name )
+Zombie::Zombie( void )
 {
-	Zombie	zombie(name);
+	std::cout << GREEN << "Zombie created " << std::endl;
+}
 
-	zombie.announce();
+Zombie::~Zombie( void )
+{
+	std::cout << RED << this->_name << ": Destroy zombie" << std::endl;
+}
+
+void	Zombie::announce( void )
+{
+	std::cout << YELLOW << this->_name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void	Zombie::setName( std::string name )
+{
+	this->_name = name;
 }

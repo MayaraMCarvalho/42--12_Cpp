@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:44:22 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/21 16:27:00 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/22 15:30:23 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,7 @@ void	Account::makeDeposit(int deposit)
 		<< ";nb_deposits:" << _nbDeposits << "\n";
 	logFile(text.str());
 }
+
 bool	Account::makeWithdrawal(int withdrawal)
 {
 	std::ostringstream	text;
@@ -150,10 +151,12 @@ bool	Account::makeWithdrawal(int withdrawal)
 	logFile(text.str());
 	return (true);
 }
+
 int		Account::checkAmount(void) const
 {
 	return (0);
 }
+
 void	Account::displayStatus(void) const
 {
 	std::ostringstream	text;

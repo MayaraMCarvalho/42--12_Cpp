@@ -6,13 +6,13 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/03/21 15:25:34 by macarval         ###   ########.fr        #
+#    Updated: 2024/03/22 15:06:34 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=
+NAME		= zombie
 
-SRCS		= main.cpp
+SRCS		= main.cpp Zombie.cpp zombieHorde.cpp
 
 VPATH		= src/
 OBJS_PATH	= obj
@@ -56,4 +56,14 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		all re clean fclean
+comp:
+			clear
+			@make -s re
+			@./$(NAME)
+
+val:
+			clear
+			@make -s re
+			@valgrind ./$(NAME)
+
+.PHONY:		all re clean fclean comp val
