@@ -6,19 +6,19 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/03/20 20:23:04 by macarval         ###   ########.fr        #
+#    Updated: 2024/03/22 09:22:36 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=
+NAME		= zombie
 
-SRCS		= main.cpp
+SRCS		= main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
 
 VPATH		= src/
 OBJS_PATH	= obj
 INCLUDE		= -I./include
 
-FLAGS		= -g3 -Wall -Wextra -Werror -g -std=c++98 -fsanitize=address
+FLAGS		= -g3 -Wall -Wextra -Werror -g -std=c++98
 CC			= c++
 
 #colors
@@ -42,8 +42,8 @@ $(OBJS_PATH):
 
 $(OBJS_PATH)/%.o: %.cpp
 			@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
-			@echo -n "$(YELLOW)Generating $(CYAN)$(NAME) $(YELLOW)objects..." $@
-			@echo -n "\n"
+#@echo -n "$(YELLOW)Generating $(CYAN)$(NAME) $(YELLOW)objects..." $@
+#@echo -n "\n"
 
 clean:
 			@rm -rf $(OBJS_PATH)

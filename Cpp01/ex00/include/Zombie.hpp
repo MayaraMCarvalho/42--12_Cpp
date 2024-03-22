@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/19 18:44:49 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/21 21:53:00 by macarval         ###   ########.fr       */
+/*   Created: 2024/03/21 21:40:51 by macarval          #+#    #+#             */
+/*   Updated: 2024/03/22 11:12:00 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CONTACT_HPP
-# define CONTACT_HPP
+#ifndef ZOMBIE_HPP
+# define ZOMBIE_HPP
 
 # include <iostream>
 # include <string>
@@ -26,31 +26,18 @@ const std::string PURPLE = "\033[35;1m";
 const std::string CYAN = "\033[36;1m";
 const std::string GRAY = "\033[37;1m";
 
-
-class Contact
+class Zombie
 {
 	private:
-		std::string	firstName;
-		std::string	lastName;
-		std::string	nickname;
-		std::string	number;
-		std::string	darkSecret;
+		std::string	_name;
 
 	public:
-		Contact(void);
-		~Contact(void);
-
-		std::string	getNumber(void) const;
-		std::string	getLastName(void) const;
-		std::string	getNickname(void) const;
-		std::string	getFirstName(void) const;
-		std::string	getDarkSecret(void) const;
-
-		void		setFirstName(std::string firstName);
-		void		setLastName(std::string lastName);
-		void		setNickname(std::string nickname);
-		void		setNumber(std::string number);
-		void		setDarkSecret(std::string darkSecret);
+		Zombie( std::string name );
+		~Zombie( void );
+		void			announce( void );
 };
+
+Zombie*	newZombie( std::string name );
+void	randomChump( std::string name );
 
 #endif

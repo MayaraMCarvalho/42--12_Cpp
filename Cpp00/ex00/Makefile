@@ -6,7 +6,7 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/03/19 17:48:48 by macarval         ###   ########.fr        #
+#    Updated: 2024/03/21 15:25:34 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ SRCS		= src/megaphone.cpp
 
 OBJS_PATH	= obj
 
-CFLAGS		= -Wall -Wextra -Werror -g -std=c++98 -fsanitize=address
+CFLAGS		= -Wall -Wextra -Werror -g -std=c++98
 CC			= c++
 
 OBJS 		= $(addprefix ${OBJS_PATH}/, ${SRCS:.cpp=.o})
