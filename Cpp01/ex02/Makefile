@@ -6,11 +6,11 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/03/22 11:42:40 by macarval         ###   ########.fr        #
+#    Updated: 2024/03/23 21:19:23 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=
+NAME		= brain
 
 SRCS		= main.cpp
 
@@ -54,7 +54,7 @@ fclean:		clean
 			@echo "$(CYAN)$(NAME): $(GREEN)Full clean done!$(RESET)"
 
 
- re:			fclean all
+re:			fclean all
 
 comp:
 			clear
