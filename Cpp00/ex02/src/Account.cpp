@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 22:44:22 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/22 15:30:23 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/26 13:42:48 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void logFile(std::string text)
 		file << text;
 		file.close();
 	} else
-		std::cerr << "Erro ao criar ou abrir o arquivo de log '" << fileName << "'.\n";
+		std::cerr << "Error creating or opening log file '" << fileName << "'.\n";
 }
 
 Account::Account (int initial_deposit)

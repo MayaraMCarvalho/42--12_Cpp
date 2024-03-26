@@ -6,7 +6,7 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/03/25 15:16:53 by macarval         ###   ########.fr        #
+#    Updated: 2024/03/26 14:17:35 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,6 +39,7 @@ $(NAME): 	$(OBJS_PATH) $(OBJS)
 
 $(OBJS_PATH):
 			@mkdir -p $(OBJS_PATH)
+			@mkdir -p files_sed
 
 $(OBJS_PATH)/%.o: %.cpp
 			@$(CC) $(FLAGS) $(INCLUDE) -c $< -o $@
@@ -50,20 +51,13 @@ clean:
 			@echo "$(CYAN)$(NAME): $(GREEN)Clean done!$(RESET)"
 
 fclean:		clean
-			@rm -f $(NAME)
+			@rm -rf $(NAME) files_sed
 			@echo "$(CYAN)$(NAME): $(GREEN)Full clean done!$(RESET)"
 
 
- re:			fclean all
+re:			fclean all
 
-comp:
-			clear
-			@make -s re
-			@./$(NAME) $(ARGS)
-
-val:
-			clear
-			@make -s re
-			@valgrind ./$(NAME) $(ARGS)
+test:		$(NAME)
+			@./test_script.sh --no-print-directory
 
 .PHONY:		all re clean fclean comp val
