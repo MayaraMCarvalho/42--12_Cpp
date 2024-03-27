@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 17:34:41 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/26 22:33:01 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/27 10:10:19 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ Harl::~Harl()
 void	Harl::debug( void )
 {
 	std::cout << PURPLE << std::endl;
+	std::cout << "[DEBUG]" << RESET << std::endl;
 	std::cout << "I love having extra bacon for my\n";
 	std::cout << "7XL-double-cheese-triple-pickle-special-ketchup burger.\n";
 	std::cout << "I really do!" << std::endl;
@@ -35,6 +36,7 @@ void	Harl::debug( void )
 void	Harl::info( void )
 {
 	std::cout << BLUE << std::endl;
+	std::cout << "[INFO]" << RESET << std::endl;
 	std::cout << "I cannot believe adding extra bacon costs more money.\n";
 	std::cout << "You didn’t put enough bacon in my burger!\n";
 	std::cout << "If you did, I wouldn’t be asking for more!" << std::endl;
@@ -43,6 +45,7 @@ void	Harl::info( void )
 void	Harl::warning( void )
 {
 	std::cout << YELLOW << std::endl;
+	std::cout << "[WARNING]" << RESET << std::endl;
 	std::cout << "I think I deserve to have some extra bacon for free.\n";
 	std::cout << "I’ve been coming for years whereas you started working\n";
 	std::cout << "here since last month." << std::endl;
@@ -51,6 +54,7 @@ void	Harl::warning( void )
 void	Harl::error( void )
 {
 	std::cout << RED << std::endl;
+	std::cout << "[ERROR]" << RESET << std::endl;
 	std::cout << "This is unacceptable! I want to speak to the manager now.";
 	std::cout << std::endl;
 }
