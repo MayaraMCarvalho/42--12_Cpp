@@ -6,7 +6,7 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/03/25 14:43:01 by macarval         ###   ########.fr        #
+#    Updated: 2024/03/26 22:35:16 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ fclean:		clean
 			@echo "$(CYAN)$(NAME): $(GREEN)Full clean done!$(RESET)"
 
 
- re:			fclean all
+re:			fclean all
 
 comp:
 			clear
