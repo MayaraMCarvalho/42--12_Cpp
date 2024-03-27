@@ -6,11 +6,11 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/03/26 22:35:16 by macarval         ###   ########.fr        #
+#    Updated: 2024/03/27 16:43:24 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=
+NAME		= fixed
 
 SRCS		= main.cpp
 

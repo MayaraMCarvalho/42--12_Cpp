@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 20:53:59 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/27 15:34:37 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/27 17:07:21 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ int	main( void )
 	std::cout << BLUE << stringREF << std::endl;
 	std::cout << GRAY;
 	std::cout << "------------------------------------------------------\n\n";
-	std::cout << RESET;
 
 	return (0);
 
