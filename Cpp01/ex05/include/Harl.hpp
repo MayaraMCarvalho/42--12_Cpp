@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 17:34:22 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/26 17:36:52 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/26 22:33:17 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define HARL_HPP
 
 # include <iostream>
-# include <fstream>
-# include <sstream>
 
 // Color codes as global variables
 const std::string RESET = "\033[0m";
@@ -30,10 +28,16 @@ const std::string GRAY = "\033[37;1m";
 class Harl
 {
 	private:
+		void	debug( void );
+		void	info( void );
+		void	warning( void );
+		void	error( void );
 
 	public:
+		Harl();
+		~Harl();
 
-
+		void	complain( std::string level );
 };
 
 #endif

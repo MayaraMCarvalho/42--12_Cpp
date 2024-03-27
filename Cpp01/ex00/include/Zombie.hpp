@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 21:40:51 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/22 11:12:00 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/26 21:58:03 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ class Zombie
 	public:
 		Zombie( std::string name );
 		~Zombie( void );
-		void			announce( void );
+		void		announce( void );
 };
 
 Zombie*	newZombie( std::string name );

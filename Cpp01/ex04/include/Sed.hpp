@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 15:09:38 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/26 21:19:13 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/26 21:56:44 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ class Sed
 		void		replaceWords( std::string& line );
 
 	public:
-		Sed( void );
+		Sed();
+		~Sed();
+		
 		int	sed( int argc, char *argv[] );
 };
 

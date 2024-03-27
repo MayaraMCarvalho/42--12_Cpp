@@ -6,15 +6,18 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 15:16:55 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/26 21:20:23 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/26 21:57:23 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
 
-Sed::Sed( void ) : _fileName("")
+Sed::Sed() : _fileName("")
 {
+}
 
+Sed::~Sed()
+{
 }
 
 int	Sed::sed( int argc, char *argv[] )
