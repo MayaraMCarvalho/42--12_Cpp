@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 21:46:15 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/25 13:54:55 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/27 15:46:45 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Weapon
 		Weapon( void );
 		~Weapon( void );
 
-		std::string	getType( void ) const;
+		std::string	const &getType( void ) const;
 		void		setType( std::string type );
 };
 

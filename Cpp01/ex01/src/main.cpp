@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 11:36:10 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/22 17:22:18 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/27 15:31:59 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,6 @@ int	main( void )
 
 	delete[] horde;
 
-	std::cout << std::endl;
+	std::cout << RESET << std::endl;
 	return (0);
 }

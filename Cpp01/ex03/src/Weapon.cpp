@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 21:48:34 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/25 13:59:01 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/27 15:46:50 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ Weapon::~Weapon(void)
 {
 }
 
-std::string	Weapon::getType(void) const
+std::string const	&Weapon::getType(void) const
 {
 	return (this->_type);
 }

@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 21:48:30 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/25 14:30:40 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/27 15:41:39 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@ class HumanA
 	private:
 		std::string	_name;
 		Weapon&		_weapon;
-
-
 
 	public:
 		HumanA( std::string	name, Weapon& weapon );

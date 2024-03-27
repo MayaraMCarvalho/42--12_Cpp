@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 21:42:03 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/22 09:30:25 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/27 15:30:44 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int	main(void)
 	foo.announce();
 
 	std::cout << GRAY << "\nImplicit delete with the end of the program" << std::endl;
+	std::cout << RESET;
 
 	return (0);
 }
