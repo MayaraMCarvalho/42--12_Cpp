@@ -6,7 +6,7 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/03/26 22:40:14 by macarval         ###   ########.fr        #
+#    Updated: 2024/03/27 12:09:42 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,11 +59,11 @@ re:			fclean all
 comp:
 			clear
 			@make -s re
-			@./$(NAME)
+			@./$(NAME) $(ARGS); RET_CODE=$$?;
 
 val:
 			clear
 			@make -s re
-			@valgrind ./$(NAME)
+			@valgrind ./$(NAME) $(ARGS); RET_CODE=$$?;
 
 .PHONY:		all re clean fclean comp val

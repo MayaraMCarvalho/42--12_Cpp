@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 22:36:55 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/26 22:41:47 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/27 12:01:44 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class Harl
 		~Harl();
 
 		void	complain( std::string level );
+		void	filter( int choice, void (Harl::* ptrLevels[4])(void) );
 };
 
 #endif
