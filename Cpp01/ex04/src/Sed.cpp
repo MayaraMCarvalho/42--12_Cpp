@@ -6,16 +6,20 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 15:16:55 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/26 17:24:11 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/26 21:20:23 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
 
+Sed::Sed( void ) : _fileName("")
+{
+
+}
+
 int	Sed::sed( int argc, char *argv[] )
 {
-	std::string	fileName;
-
+	_fileName = "";
 	if (argc != 4)
 	{
 		std::cout << RED;
@@ -24,43 +28,45 @@ int	Sed::sed( int argc, char *argv[] )
 	}
 	else
 	{
-		fileName = "files_sed/" + std::string(argv[1]);
-		if(openFile(fileName))
+		_fileName = "files_sed/" + std::string(argv[1]);
+		if(openFile())
 			return (1);
-		if(createFile(fileName))
+		if(createFile())
 			return (1);
-		replace(fileName, argv[2], argv[3]);
+		_oldWord = argv[2];
+		_newWord = argv[3];
+		replace();
 		std::cout << GREEN << "\nSed executed successfully!\n" << std::endl;
 	}
 	return (0);
 }
 
-void	Sed::replace( std::string fileName, std::string s1, std::string s2 )
+void	Sed::replace( void )
 {
 	std::string		line;
 	std::ifstream	file;
 	std::ofstream	sedFile;
 
-	file.open(fileName.c_str());
-	sedFile.open((fileName + ".sed").c_str());
+	file.open(_fileName.c_str());
+	sedFile.open((_fileName + ".sed").c_str());
 	while (std::getline(file, line))
 	{
-		replaceWords(line, s1, s2);
+		replaceWords(line);
 		sedFile << line << "\n";
 	}
 	file.close();
 	sedFile.close();
 }
 
-void	Sed::replaceWords( std::string& line, std::string s1, std::string s2 )
+void	Sed::replaceWords( std::string& line)
 {
 	size_t pos;
-	pos = line.find(s1);
+	pos = line.find(_oldWord);
 	while (pos != std::string::npos)
 	{
-		line.erase(pos, s1.size());
-		line.insert(pos, s2);
-		pos += s2.size();
-		pos = line.find(s1, pos);
+		line.erase(pos, _oldWord.size());
+		line.insert(pos, _newWord);
+		pos += _newWord.size();
+		pos = line.find(_oldWord, pos);
 	}
 }

@@ -6,21 +6,21 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 15:16:58 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/26 17:24:14 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/26 21:07:22 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sed.hpp"
 
-int	Sed::openFile( std::string fileName )
+int	Sed::openFile( void )
 {
 	std::ifstream	file;
 
-	file.open(fileName.c_str());
+	file.open(_fileName.c_str());
 	if (!file.is_open())
 	{
 		std::cout << RED;
-		std::cerr << "\nError opening the file '" << fileName << "'!\n\n";
+		std::cerr << "\nError opening the file '" << _fileName << "'!\n\n";
 		file.close();
 		return (1);
 	}
@@ -35,16 +35,16 @@ int	Sed::openFile( std::string fileName )
 	return (0);
 }
 
-int	Sed::createFile( std::string fileName )
+int	Sed::createFile( void )
 {
 	std::string	fileNameSed;
 
-	fileNameSed = fileName + ".sed";
+	fileNameSed = _fileName + ".sed";
 	std::ofstream file(fileNameSed.c_str(), std::ios_base::app);
 	if (!file.is_open())
 	{
 		std::cout << RED;
-		std::cerr << "Error creating the file '" << fileName << ".sed'.\n";
+		std::cerr << "Error creating the file '" << _fileName << ".sed'.\n";
 		file.close();
 		return (1);
 	}

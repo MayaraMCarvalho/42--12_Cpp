@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 15:09:38 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/26 16:06:40 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/26 21:19:13 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,17 @@ const std::string GRAY = "\033[37;1m";
 class Sed
 {
 	private:
-		int		openFile( std::string fileName );
-		int		createFile( std::string fileName );
-		void	replace( std::string fileName, std::string s1, std::string s2 );
-		void	replaceWords( std::string& line, std::string s1, std::string s2 );
+		std::string	_fileName;
+		std::string	_oldWord;
+		std::string	_newWord;
+
+		int			openFile( void );
+		int			createFile( void );
+		void		replace( void );
+		void		replaceWords( std::string& line );
+
 	public:
+		Sed( void );
 		int	sed( int argc, char *argv[] );
 };
 
