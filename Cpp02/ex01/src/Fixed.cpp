@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 16:43:03 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/29 22:45:38 by macarval         ###   ########.fr       */
+/*   Updated: 2024/03/30 20:54:21 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,7 @@ Fixed& Fixed::operator=( const Fixed &comp )
 
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
 {
-	float floatValue;
-
-	floatValue = static_cast<float>(fixed.getRawBits()) / (1 << fixed._fract);
-	out << floatValue;
-	return out;
+	return out << fixed.toFloat();
 }
 
 int Fixed::getRawBits( void ) const
@@ -70,11 +66,10 @@ void Fixed::setRawBits( int const raw )
 
 float Fixed::toFloat( void ) const
 {
-	float	a = 0;//
-	return a;//
+	return (float)_fixed / (1 << _fract);
 }
 
 int Fixed::toInt( void ) const
 {
-	return this->_fixed * (1 << _fract);//
+	return this->_fixed >> _fract;
 }
