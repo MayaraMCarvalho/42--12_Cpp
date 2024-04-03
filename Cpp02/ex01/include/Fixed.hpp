@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 16:44:45 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/29 22:43:46 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/03 14:16:57 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FIXED_HPP
 
 # include <iostream>
+# include <math.h>
 
 // Color codes as global variables
 const std::string RESET = "\033[0m";

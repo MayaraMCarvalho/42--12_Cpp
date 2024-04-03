@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 16:41:11 by macarval          #+#    #+#             */
-/*   Updated: 2024/03/29 22:44:03 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/03 14:29:51 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,6 @@ int main( void )
 	std::cout << BLUE;
 	std::cout << "---------------------------------------------------------";
 	std::cout << GRAY << std::endl;
-
 	Fixed const c( 42.42f );
 
 	std::cout << BLUE << std::endl;
@@ -105,97 +104,97 @@ int main( void )
 
 	a = Fixed( 1234.4321f );
 
-	// std::cout << BLUE << std::endl;
-	// std::cout << "---------------------------------------------------------\n";
-	// std::cout << CYAN;
-	// std::cout << "The instance 'a' is printed using the insertion operator\n";
-	// std::cout << "The insertion operator is overloaded to print the float value\n";
-	// std::cout << BLUE;
-	// std::cout << "---------------------------------------------------------";
-	// std::cout << GRAY << std::endl;
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "The instance 'a' is printed using the insertion operator\n";
+	std::cout << "The insertion operator is overloaded to print the float value\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------";
+	std::cout << GRAY << std::endl;
 
-	// std::cout << "a is " << a << std::endl;
+	std::cout << "a is " << a << std::endl;
 
-	// std::cout << BLUE << std::endl;
-	// std::cout << "---------------------------------------------------------\n";
-	// std::cout << CYAN;
-	// std::cout << "The instance 'b' is printed using insertion operator\n";
-	// std::cout << "The insertion operator is overloaded to print the float value\n";
-	// std::cout << BLUE;
-	// std::cout << "---------------------------------------------------------";
-	// std::cout << GRAY << std::endl;
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "The instance 'b' is printed using insertion operator\n";
+	std::cout << "The insertion operator is overloaded to print the float value\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------";
+	std::cout << GRAY << std::endl;
 
-	// std::cout << "b is " << b << std::endl;
+	std::cout << "b is " << b << std::endl;
 
-	// std::cout << BLUE << std::endl;
-	// std::cout << "---------------------------------------------------------\n";
-	// std::cout << CYAN;
-	// std::cout << "The instance 'c' is printed using insertion operator\n";
-	// std::cout << "The insertion operator is overloaded to print the float value\n";
-	// std::cout << BLUE;
-	// std::cout << "---------------------------------------------------------";
-	// std::cout << GRAY << std::endl;
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "The instance 'c' is printed using insertion operator\n";
+	std::cout << "The insertion operator is overloaded to print the float value\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------";
+	std::cout << GRAY << std::endl;
 
-	// std::cout << "c is " << c << std::endl;
+	std::cout << "c is " << c << std::endl;
 
-	// std::cout << BLUE << std::endl;
-	// std::cout << "---------------------------------------------------------\n";
-	// std::cout << CYAN;
-	// std::cout << "The instance 'd' is printed using insertion operator\n";
-	// std::cout << "The insertion operator is overloaded to print the float value\n";
-	// std::cout << BLUE;
-	// std::cout << "---------------------------------------------------------";
-	// std::cout << GRAY << std::endl;
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "The instance 'd' is printed using insertion operator\n";
+	std::cout << "The insertion operator is overloaded to print the float value\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------";
+	std::cout << GRAY << std::endl;
 
-	// std::cout << "d is " << d << std::endl;
+	std::cout << "d is " << d << std::endl;
 
-	// std::cout << BLUE << std::endl;
-	// std::cout << "---------------------------------------------------------\n";
-	// std::cout << CYAN;
-	// std::cout << "The instance 'a' is printed using the toInt member function\n";
-	// std::cout << BLUE;
-	// std::cout << "---------------------------------------------------------";
-	// std::cout << GRAY << std::endl;
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "The instance 'a' is printed using the toInt member function\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------";
+	std::cout << GRAY << std::endl;
 
-	// std::cout << "a is " << a.toInt() << " as integer" << std::endl;
+	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 
-	// std::cout << BLUE << std::endl;
-	// std::cout << "---------------------------------------------------------\n";
-	// std::cout << CYAN;
-	// std::cout << "The instance 'b' is printed using the toInt member function\n";
-	// std::cout << BLUE;
-	// std::cout << "---------------------------------------------------------";
-	// std::cout << GRAY << std::endl;
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "The instance 'b' is printed using the toInt member function\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------";
+	std::cout << GRAY << std::endl;
 
-	// std::cout << "b is " << b.toInt() << " as integer" << std::endl;
+	std::cout << "b is " << b.toInt() << " as integer" << std::endl;
 
-	// std::cout << BLUE << std::endl;
-	// std::cout << "---------------------------------------------------------\n";
-	// std::cout << CYAN;
-	// std::cout << "The instance 'c' is printed using the toInt member function\n";
-	// std::cout << BLUE;
-	// std::cout << "---------------------------------------------------------";
-	// std::cout << GRAY << std::endl;
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "The instance 'c' is printed using the toInt member function\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------";
+	std::cout << GRAY << std::endl;
 
-	// std::cout << "c is " << c.toInt() << " as integer" << std::endl;
+	std::cout << "c is " << c.toInt() << " as integer" << std::endl;
 
-	// std::cout << BLUE << std::endl;
-	// std::cout << "---------------------------------------------------------\n";
-	// std::cout << CYAN;
-	// std::cout << "The instance 'd' is printed using the toInt member function\n";
-	// std::cout << BLUE;
-	// std::cout << "---------------------------------------------------------";
-	// std::cout << GRAY << std::endl;
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "The instance 'd' is printed using the toInt member function\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------";
+	std::cout << GRAY << std::endl;
 
-	// std::cout << "d is " << d.toInt() << " as integer" << std::endl;
+	std::cout << "d is " << d.toInt() << " as integer" << std::endl;
 
-	// std::cout << BLUE << std::endl;
-	// std::cout << "---------------------------------------------------------\n";
-	// std::cout << CYAN;
-	// std::cout << "The instances 'a', 'b', 'c' and 'd' are destroyed\n";
-	// std::cout << BLUE;
-	// std::cout << "---------------------------------------------------------";
-	// std::cout << GRAY << std::endl;
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "The instances 'a', 'b', 'c' and 'd' are destroyed\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------";
+	std::cout << GRAY << std::endl;
 
 	return 0;
 }
