@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 16:44:45 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/03 14:16:57 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/04 16:41:03 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,12 +39,13 @@ class Fixed
 		~Fixed( void );
 		Fixed( const Fixed &copy );
 		Fixed& operator=( const Fixed &comp );
-		friend std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
 
 		int		getRawBits( void ) const;
 		void	setRawBits( int const raw );
 		float	toFloat( void ) const;
 		int		toInt( void ) const;
 };
+
+std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
 
 #endif
