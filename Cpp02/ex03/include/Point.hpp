@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 21:58:15 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/03 22:20:13 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/04 13:12:23 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,17 @@ class Point
 
 	public:
 		Point( void );
-		Point( const float x, const float y );
+		Point( float const x, float const y );
+		Point( Point const &copy );
 		~Point( void );
-		Point( const Point &copy );
-		Point& operator=( const Point &comp );
 
-		bool bsp( Point const a, Point const b, Point const c, Point const point);
+		Point& operator=( Point const &other );
+
+		Fixed	getX( void ) const;
+		Fixed	getY( void ) const;
+
 };
+
+bool bsp( Point const a, Point const b, Point const c, Point const point );
 
 #endif
