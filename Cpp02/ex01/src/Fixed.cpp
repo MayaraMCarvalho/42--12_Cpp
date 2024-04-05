@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 16:43:03 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/03 14:26:50 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/04 18:12:09 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void Fixed::setRawBits( int const raw )
 {
 	this->_fixed = raw;
 }
-
 
 float Fixed::toFloat( void ) const
 {

@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 20:18:11 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/04 20:18:34 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/04 21:08:02 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,22 @@ const std::string GRAY = "\033[37;1m";
 class ClapTrap
 {
 	private:
+		std::string	_name;
+		int			_hitPoints;
+		int			_energyPoints;
+		int			_attackDamage;
 
 	public:
 		ClapTrap( void );
+		ClapTrap( std::string name );
 		ClapTrap( const ClapTrap &copy );
 		~ClapTrap( void );
 
-		ClapTrap& operator=( const ClapTrap &other );
+		ClapTrap&	operator=( const ClapTrap &other );
 
+		void		attack( const std::string& target );
+		void		takeDamage( unsigned int amount );
+		void		beRepaired( unsigned int amount );
 };
 
 #endif

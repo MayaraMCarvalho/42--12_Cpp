@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 21:58:15 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/04 13:12:23 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/04 20:28:49 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ class Point
 	private:
 		Fixed const	_x;
 		Fixed const	_y;
-		// Posso acrescentar mais se achar necessário
 
 	public:
 		Point( void );
