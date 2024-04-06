@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 20:00:18 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/06 12:12:10 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/06 12:23:06 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,14 @@ int	main ( void )
 
 	std::cout << GRAY;
 	std::cout << "---------------------------------------------------------------" << std::endl;
+	std::cout << "Thomas attacks Bob" << std::endl;
+	std::cout << "---------------------------------------------------------------" << std::endl;
+
+	thomas.attack(bob.getName());
+ 	bob.takeDamage(thomas.getAttackDamage());
+
+	std::cout << GRAY;
+	std::cout << "---------------------------------------------------------------" << std::endl;
 	std::cout << "John repairs himself with 20 hit points" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 
@@ -64,13 +72,20 @@ int	main ( void )
 
 	std::cout << GRAY;
 	std::cout << "---------------------------------------------------------------" << std::endl;
-	std::cout << "Harry attacks Bob 5 times" << std::endl;
+	std::cout << "Thomas repairs himself with 30 hit points" << std::endl;
+	std::cout << "---------------------------------------------------------------" << std::endl;
+
+	thomas.beRepaired(30);
+
+	std::cout << GRAY;
+	std::cout << "---------------------------------------------------------------" << std::endl;
+	std::cout << "Thomas attacks Bob 5 times" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 
 	for (int i = 0; i < 5; i++)
 	{
-		harry.attack(bob.getName());
-		bob.takeDamage(harry.getAttackDamage());
+		thomas.attack(bob.getName());
+		bob.takeDamage(thomas.getAttackDamage());
 	}
 
 	std::cout << GRAY;
