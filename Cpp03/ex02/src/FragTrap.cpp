@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:15:46 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/06 11:39:04 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/06 11:46:06 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 FragTrap::FragTrap( void ) : ClapTrap()
 {
 	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 	std::cout << YELLOW;
 	std::cout << "FragTrap " << this->_name;
 	std::cout << " was created inheriting from ClapTrap with ";
@@ -29,8 +29,8 @@ FragTrap::FragTrap( void ) : ClapTrap()
 FragTrap::FragTrap( std::string name ) : ClapTrap( name )
 {
 	this->_hitPoints = 100;
-	this->_energyPoints = 50;
-	this->_attackDamage = 20;
+	this->_energyPoints = 100;
+	this->_attackDamage = 30;
 	std::cout << CYAN;
 	std::cout << "FragTrap " << RED << this->_name;
 	std::cout << CYAN <<" was created from ClapTrap with ";
@@ -173,7 +173,7 @@ void FragTrap::highFivesGuys(void)
 {
 	std::cout << BLUE;
 	std::cout << "FragTrap " << YELLOW << this->_name << BLUE;
-	std::cout << " is now 🏰 Gatekeeper mode!!!🛡️\n" << std::endl;
+	std::cout << " wants to high five 🫸🫷\n" << std::endl;
 	std::cout << RESET;
 }
 
