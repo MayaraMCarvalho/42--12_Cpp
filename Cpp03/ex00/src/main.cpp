@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 20:00:18 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/05 14:57:44 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/06 11:05:07 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,36 +19,36 @@ int	main ( void )
 	std::cout << "************************ CLAPTRAP TEST ************************" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 	std::cout << "ClapTrap a is created with name John" << std::endl;
-	std::cout << "ClapTrap b is created with name 'Bob'" << std::endl;
+	std::cout << "ClapTrap b is created with name Bob" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 
-	ClapTrap john("🏹John");
-	ClapTrap bob;
+	ClapTrap a("🏹John");
+	ClapTrap b;
 
-	bob.setName("⚡Bob");
+	b.setName("⚡Bob");
 
 	std::cout << GRAY;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 	std::cout << "John attacks Bob" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 
-	john.attack(bob.getName());
-	bob.takeDamage(john.getAttackDamage());
+	a.attack(b.getName());
+	b.takeDamage(a.getAttackDamage());
 
 	std::cout << GRAY;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 	std::cout << "Bob attacks John" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 
-	bob.attack(john.getName());
- 	john.takeDamage(bob.getAttackDamage());
+	b.attack(a.getName());
+ 	a.takeDamage(b.getAttackDamage());
 
 	std::cout << GRAY;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 	std::cout << "John repairs himself with 2 hit points" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 
-	john.beRepaired(2);
+	a.beRepaired(2);
 
 	std::cout << GRAY;
 	std::cout << "---------------------------------------------------------------" << std::endl;
@@ -57,25 +57,25 @@ int	main ( void )
 
 	for (int i = 0; i < 8; i++)
 	{
-		john.attack(bob.getName());
-		bob.takeDamage(john.getAttackDamage());
+		a.attack(b.getName());
+		b.takeDamage(a.getAttackDamage());
 	}
-	john.attack(bob.getName());
-	john.attack(bob.getName());
+	a.attack(b.getName());
+	a.attack(b.getName());
 
 	std::cout << GRAY;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 	std::cout << "Bob repairs himself with 2 hit points" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 
-	bob.beRepaired(2);
+	b.beRepaired(2);
 
 	std::cout << GRAY;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 	std::cout << "John try repairs himself with 5 hit points" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 
-	john.beRepaired(5);
+	a.beRepaired(5);
 
 	std::cout << GRAY;
 	std::cout << "---------------------------------------------------------------" << std::endl;
