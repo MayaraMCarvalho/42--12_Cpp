@@ -1,66 +1,61 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 15:15:46 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/06 12:13:17 by macarval         ###   ########.fr       */
+/*   Created: 2024/04/04 20:17:27 by macarval          #+#    #+#             */
+/*   Updated: 2024/04/06 11:37:37 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "ClapTrap.hpp"
 
-FragTrap::FragTrap( void ) : ClapTrap()
+ClapTrap::ClapTrap( void ) : _name("John Doe"), _hitPoints(10),
+							_energyPoints(10), _attackDamage(0)
 {
-	this->_hitPoints = 100;
-	this->_energyPoints = 100;
-	this->_attackDamage = 30;
 	std::cout << YELLOW;
-	std::cout << "FragTrap " << this->_name;
-	std::cout << " was created inheriting from ClapTrap with ";
+	std::cout << "ClapTrap " << this->_name << " was created with ";
 	std::cout << this->_hitPoints << " hit points⚡,\n";
 	std::cout << this->_energyPoints << " energy points🔋 and ";
 	std::cout << this->_attackDamage << " attack damage 🗡️.\n\n";
 	std::cout << RESET;
 }
 
-FragTrap::FragTrap( std::string name ) : ClapTrap( name )
+ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPoints(10),
+										_energyPoints(10), _attackDamage(0)
 {
-	this->_hitPoints = 100;
-	this->_energyPoints = 100;
-	this->_attackDamage = 30;
 	std::cout << CYAN;
-	std::cout << "FragTrap " << RED << this->_name;
-	std::cout << CYAN <<" was created from ClapTrap with ";
+	std::cout << "ClapTrap " << RED << this->_name;
+	std::cout << CYAN <<" was created with ";
 	std::cout << this->_hitPoints << " hit points⚡,\n";
 	std::cout << this->_energyPoints << " energy points🔋 and ";
 	std::cout << this->_attackDamage << " attack damage 🗡️.\n\n";
 	std::cout << RESET;
 }
 
-FragTrap::FragTrap( FragTrap const &copy ) : ClapTrap( copy )
+ClapTrap::ClapTrap( ClapTrap const &copy )
 {
 	*this = copy;
 	std::cout << GRAY;
-	std::cout << "A copy FragTrap " << RED << this->_name;
+	std::cout << "A copy ClapTrap " << RED << this->_name;
 	std::cout << GRAY << " was created!" << std::endl;
 	std::cout << RESET;
 }
 
-FragTrap::~FragTrap( void )
+ClapTrap::~ClapTrap( void )
 {
 	std::cout << RED;
-	std::cout << "FragTrap " << YELLOW << this->_name;
+	std::cout << "ClapTrap " << YELLOW << this->_name;
 	std::cout << RED << " was destroyed! 👋👋\n" << std::endl;
 	std::cout << RESET;
 }
 
-FragTrap& FragTrap::operator=( FragTrap const &other )
+ClapTrap& ClapTrap::operator=( ClapTrap const &other )
 {
 	std::cout << GREEN;
-	std::cout << "FragTrap " << RED << other._name;
+	std::cout << "ClapTrap " << RED << other._name;
 	std::cout << GREEN << " copied by assignment operator" << std::endl;
 	std::cout << RESET;
 	if (this != &other)
@@ -73,10 +68,29 @@ FragTrap& FragTrap::operator=( FragTrap const &other )
 	return *this;
 }
 
+void ClapTrap::setName( std::string name )
+{
+	this->_name = name;
+	std::cout << YELLOW;
+	std::cout << "ClapTrap " << RED << this->_name;
+	std::cout << YELLOW << " now it has a name! 👍\n\n";
+	std::cout << RESET;
+}
+
+std::string ClapTrap::getName( void ) const
+{
+	return this->_name;
+}
+
+int ClapTrap::getAttackDamage() const
+{
+	return this->_attackDamage;
+}
+
 static void status( std::string name, int status)
 {
 	std::cout << RED;
-	std::cout << "FragTrap " << YELLOW << name << RED;
+	std::cout << "ClapTrap " << YELLOW << name << RED;
 	if (status == 1)
 		std::cout << " has no energy points🔋 to attack!\n";
 	else
@@ -88,21 +102,21 @@ static void statusEnergy (std::string name, int energy)
 {
 	if (energy == 0)
 	{
-		std::cout << YELLOW << "FragTrap " << RED << name << YELLOW;
+		std::cout << YELLOW << "ClapTrap " << RED << name << YELLOW;
 		std::cout << " is so tired that right now 😴!" << std::endl;
 	}
 }
 
-void FragTrap::attack( std::string const &target )
+void ClapTrap::attack( std::string const &target )
 {
 	if (this->_energyPoints > 0 && this->_hitPoints > 0)
 	{
 		--this->_energyPoints;
 		std::cout << PURPLE;
-		std::cout << "FragTrap " << RED << this->_name << PURPLE;
+		std::cout << "ClapTrap " << RED << this->_name << PURPLE;
 		std::cout << " 💥attacks " << target << ", causing ";
 		std::cout << this->_attackDamage << " points of damage!\n";
-		std::cout << "FragTrap " << RED << this->_name << PURPLE << " has now ";
+		std::cout << "ClapTrap " << RED << this->_name << PURPLE << " has now ";
 		std::cout << this->_energyPoints << " energy points🔋!\n";
 		std::cout << RESET;
 		statusEnergy(this->_name, this->_energyPoints);
@@ -119,15 +133,15 @@ void FragTrap::attack( std::string const &target )
 	}
 }
 
-void FragTrap::takeDamage( unsigned int amount )
+void ClapTrap::takeDamage( unsigned int amount )
 {
 	if (this->_hitPoints > 0)
 	{
 		this->_hitPoints -= amount;
 		std::cout << BLUE;
-		std::cout << "FragTrap " << RED << this->_name << BLUE;
+		std::cout << "ClapTrap " << RED << this->_name << BLUE;
 		std::cout << " take " << amount << " points of damage!😲🤕\n";
-		std::cout << "FragTrap " << RED << this->_name << BLUE << " has now ";
+		std::cout << "ClapTrap " << RED << this->_name << BLUE << " has now ";
 		std::cout << this->_hitPoints << " hit points⚡!\n" << std::endl;
 		std::cout << RESET;
 		if (this->_hitPoints <= 0)
@@ -141,21 +155,21 @@ void FragTrap::takeDamage( unsigned int amount )
 	}
 }
 
-void FragTrap::beRepaired( unsigned int amount )
+void ClapTrap::beRepaired( unsigned int amount )
 {
 	if (this->_energyPoints > 0)
 	{
 		std::cout << GREEN;
 		if (this->_hitPoints <= 0)
 		{
-			std::cout << "FragTrap " << RED << this->_name << GREEN;
+			std::cout << "ClapTrap " << RED << this->_name << GREEN;
 			std::cout << " had his life 🐣restored\n";
 		}
 		--this->_energyPoints;
 		this->_hitPoints += amount;
-		std::cout << "FragTrap " << RED << this->_name << GREEN;
+		std::cout << "ClapTrap " << RED << this->_name << GREEN;
 		std::cout << " be 🩹repaired with " << amount << " hit points⚡!\n";
-		std::cout << "FragTrap " << RED << this->_name << GREEN << " has now ";
+		std::cout << "ClapTrap " << RED << this->_name << GREEN << " has now ";
 		std::cout << this->_hitPoints << " hit points⚡ and ";
 		std::cout << this->_energyPoints << " energy points🔋!\n" << std::endl;
 		std::cout << RESET;
@@ -169,10 +183,3 @@ void FragTrap::beRepaired( unsigned int amount )
 	}
 }
 
-void FragTrap::highFivesGuys(void)
-{
-	std::cout << BLUE;
-	std::cout << "FragTrap " << YELLOW << this->_name << BLUE;
-	std::cout << " wants to high five 🫸🫷\n" << std::endl;
-	std::cout << RESET;
-}

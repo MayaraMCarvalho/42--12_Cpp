@@ -6,27 +6,30 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 20:00:18 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/06 12:10:54 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/06 12:12:10 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
+# include "DiamondTrap.hpp"
 
 int	main ( void )
 {
 	std::cout << GRAY << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
-	std::cout << "************************ FRAGTRAP TEST ************************" << std::endl;
+	std::cout << "********************** DIAMONDTRAP TEST ***********************" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 	std::cout << "ClapTrap a is created with name John" << std::endl;
 	std::cout << "ScavTrap b is created with name Bob" << std::endl;
 	std::cout << "FragTrap b is created with name Harry" << std::endl;
+	std::cout << "DiamontTrap b is created with name Thomas" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 
 	ClapTrap john("🏹John");
 	ScavTrap bob("⚡Bob");
 	FragTrap harry("🤴Harry");
+	DiamondTrap thomas("💎Thomas");
 
 	std::cout << GRAY;
 	std::cout << "---------------------------------------------------------------" << std::endl;

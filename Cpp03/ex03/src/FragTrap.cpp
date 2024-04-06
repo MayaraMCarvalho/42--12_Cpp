@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:15:46 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/06 12:13:17 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/06 11:46:06 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,3 +176,4 @@ void FragTrap::highFivesGuys(void)
 	std::cout << " wants to high five 🫸🫷\n" << std::endl;
 	std::cout << RESET;
 }
+
