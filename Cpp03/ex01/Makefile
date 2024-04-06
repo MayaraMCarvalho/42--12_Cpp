@@ -6,13 +6,13 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/03/26 22:35:16 by macarval         ###   ########.fr        #
+#    Updated: 2024/04/05 15:16:40 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=
+NAME		= ScavTrap
 
-SRCS		= main.cpp
+SRCS		= main.cpp ClapTrap.cpp ScavTrap.cpp
 
 VPATH		= src/
 OBJS_PATH	= obj

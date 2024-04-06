@@ -6,49 +6,47 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 20:00:18 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/06 11:09:02 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/06 11:17:11 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "ClapTrap.hpp"
+# include "ScavTrap.hpp"
 
 int	main ( void )
 {
 	std::cout << GRAY << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
-	std::cout << "************************ CLAPTRAP TEST ************************" << std::endl;
+	std::cout << "************************ SCAVTRAP TEST ************************" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 	std::cout << "ClapTrap a is created with name John" << std::endl;
-	std::cout << "ClapTrap b is created with name Bob" << std::endl;
+	std::cout << "ScavTrap b is created with name Bob" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 
-	ClapTrap a("🏹John");
-	ClapTrap b;
-
-	b.setName("⚡Bob");
+	ClapTrap john("🏹John");
+	ScavTrap bob("⚡Bob");
 
 	std::cout << GRAY;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 	std::cout << "John attacks Bob" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 
-	a.attack(b.getName());
-	b.takeDamage(a.getAttackDamage());
+	john.attack(bob.getName());
+	bob.takeDamage(john.getAttackDamage());
 
 	std::cout << GRAY;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 	std::cout << "Bob attacks John" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 
-	b.attack(a.getName());
- 	a.takeDamage(b.getAttackDamage());
+	bob.attack(john.getName());
+ 	john.takeDamage(bob.getAttackDamage());
 
 	std::cout << GRAY;
 	std::cout << "---------------------------------------------------------------" << std::endl;
-	std::cout << "John repairs himself with 2 hit points" << std::endl;
+	std::cout << "John repairs himself with 20 hit points" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 
-	a.beRepaired(2);
+	john.beRepaired(20);
 
 	std::cout << GRAY;
 	std::cout << "---------------------------------------------------------------" << std::endl;
@@ -57,25 +55,31 @@ int	main ( void )
 
 	for (int i = 0; i < 8; i++)
 	{
-		a.attack(b.getName());
-		b.takeDamage(a.getAttackDamage());
+		john.attack(bob.getName());
+		bob.takeDamage(john.getAttackDamage());
 	}
-	a.attack(b.getName());
-	a.attack(b.getName());
+	john.attack(bob.getName());
+	john.attack(bob.getName());
 
 	std::cout << GRAY;
 	std::cout << "---------------------------------------------------------------" << std::endl;
-	std::cout << "Bob repairs himself with 2 hit points" << std::endl;
+	std::cout << "Bob repairs himself with 20 hit points" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 
-	b.beRepaired(2);
+	bob.beRepaired(20);
 
 	std::cout << GRAY;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 	std::cout << "John try repairs himself with 5 hit points" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 
-	a.beRepaired(5);
+	john.beRepaired(5);
+
+	std::cout << "---------------------------------------------------------------" << std::endl;
+	std::cout << "Bob give up from war, and he is now a gatekeeper" << std::endl;
+	std::cout << "---------------------------------------------------------------" << std::endl;
+
+	bob.guardGate();
 
 	std::cout << GRAY;
 	std::cout << "---------------------------------------------------------------" << std::endl;
