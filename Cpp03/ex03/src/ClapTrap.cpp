@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 20:17:27 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/06 11:37:37 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/06 19:34:13 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ std::string ClapTrap::getName( void ) const
 	return this->_name;
 }
 
-int ClapTrap::getAttackDamage() const
+int ClapTrap::getAttackDamage( void ) const
 {
 	return this->_attackDamage;
 }

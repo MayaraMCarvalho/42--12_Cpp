@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 20:00:18 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/06 12:23:06 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/06 19:07:46 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,9 +114,15 @@ int	main ( void )
 
 	harry.highFivesGuys();
 
+	std::cout << "---------------------------------------------------------------" << std::endl;
+	std::cout << "Thomas presents himself" << std::endl;
+	std::cout << "---------------------------------------------------------------" << std::endl;
+
+	thomas.whoAmI();
+
 	std::cout << GRAY;
 	std::cout << "---------------------------------------------------------------" << std::endl;
-	std::cout << "John, Bob  and Harry are destroyed" << std::endl;
+	std::cout << "John, Bob, Harry and Thomas are destroyed" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 	std::cout << RESET;
 

@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 20:18:11 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/06 11:06:51 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/06 19:33:59 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ class ClapTrap
 
 		void		setName( std::string name );
 		std::string	getName( void ) const;
-		int			getAttackDamage() const;
+		int			getAttackDamage( void ) const;
 
 		void		attack( std::string const &target );
 		void		takeDamage( unsigned int amount );

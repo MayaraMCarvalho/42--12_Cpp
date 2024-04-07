@@ -6,41 +6,48 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 12:05:19 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/06 12:17:16 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/07 17:35:08 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap( void ) : ClapTrap()
+DiamondTrap::DiamondTrap( void ) : ClapTrap("John Doe_clap_name"),
+									ScavTrap(), FragTrap()
 {
-	this->_hitPoints = 100;
-	this->_energyPoints = 100;
-	this->_attackDamage = 30;
+	this->_name = "John Doe";
+	this->_hitPoints = FragTrap::_hitPoints;
+	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_attackDamage = FragTrap::_attackDamage;
 	std::cout << YELLOW;
 	std::cout << "DiamondTrap " << this->_name;
-	std::cout << " was created inheriting from ClapTrap with ";
+	std::cout << " was created inheriting from ";
+	std::cout << "ClapTrap, ScavTrap and FragTrap with ";
 	std::cout << this->_hitPoints << " hit points⚡,\n";
 	std::cout << this->_energyPoints << " energy points🔋 and ";
 	std::cout << this->_attackDamage << " attack damage 🗡️.\n\n";
 	std::cout << RESET;
 }
 
-DiamondTrap::DiamondTrap( std::string name ) : ClapTrap( name + "_clap_name")
+DiamondTrap::DiamondTrap( std::string name ) : ClapTrap( name + "_clap_name" ),
+											ScavTrap( name ), FragTrap( name )
 {
-	this->_hitPoints = 100;
-	this->_energyPoints = 100;
-	this->_attackDamage = 30;
+	this->_name = name;
+	this->_hitPoints = FragTrap::_hitPoints;
+	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_attackDamage = FragTrap::_attackDamage;
 	std::cout << CYAN;
 	std::cout << "DiamondTrap " << RED << this->_name;
-	std::cout << CYAN <<" was created from ClapTrap with ";
+	std::cout << CYAN <<" was created from ";
+	std::cout << "ClapTrap, ScavTrap and FragTrap with ";
 	std::cout << this->_hitPoints << " hit points⚡,\n";
 	std::cout << this->_energyPoints << " energy points🔋 and ";
 	std::cout << this->_attackDamage << " attack damage 🗡️.\n\n";
 	std::cout << RESET;
 }
 
-DiamondTrap::DiamondTrap( DiamondTrap const &copy ) : ClapTrap( copy )
+DiamondTrap::DiamondTrap( DiamondTrap const &copy ) : ClapTrap( copy ),
+											ScavTrap( copy ), FragTrap ( copy )
 {
 	*this = copy;
 	std::cout << GRAY;
@@ -95,28 +102,7 @@ static void statusEnergy (std::string name, int energy)
 
 void DiamondTrap::attack( std::string const &target )
 {
-	if (this->_energyPoints > 0 && this->_hitPoints > 0)
-	{
-		--this->_energyPoints;
-		std::cout << PURPLE;
-		std::cout << "DiamondTrap " << RED << this->_name << PURPLE;
-		std::cout << " 💥attacks " << target << ", causing ";
-		std::cout << this->_attackDamage << " points of damage!\n";
-		std::cout << "DiamondTrap " << RED << this->_name << PURPLE << " has now ";
-		std::cout << this->_energyPoints << " energy points🔋!\n";
-		std::cout << RESET;
-		statusEnergy(this->_name, this->_energyPoints);
-		std::cout << std::endl;
-	}
-	else
-	{
-		std::cout << RED;
-		std::cout << "Can't attack!!\n";
-		if (this->_hitPoints == 0)
-			status(this->_name, 0);
-		else if (this->_energyPoints == 0)
-			status(this->_name, 1);
-	}
+	ScavTrap::attack(target);
 }
 
 void DiamondTrap::takeDamage( unsigned int amount )
@@ -169,11 +155,11 @@ void DiamondTrap::beRepaired( unsigned int amount )
 	}
 }
 
-void DiamondTrap::whoAmI(void)
+void DiamondTrap::whoAmI(void) const
 {
 	std::cout << BLUE;
-	std::cout << "DiamondTrap " << YELLOW << this->_name << BLUE;
-	std::cout << " whoAmI\n" << std::endl;
-	std::cout << RESET;
+	std::cout << "Hi, i'm DiamondTrap " << YELLOW << this->_name << BLUE;
+	std::cout << " and my ClapTrap name is " << YELLOW << ClapTrap::_name;
+	std::cout << BLUE << " !\n" << "I'm a ScavTrap and FragTrap too!";
+	std::cout << std::endl << RESET << std::endl;
 }
-
