@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:15:46 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/07 16:04:11 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/09 21:08:06 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ ScavTrap::ScavTrap( void ) : ClapTrap()
 	this->_attackDamage = 20;
 	std::cout << YELLOW;
 	std::cout << "ScavTrap " << this->_name;
-	std::cout << " was created inheriting from ClapTrap with ";
-	std::cout << this->_hitPoints << " hit points⚡,\n";
+	std::cout << " was created inheriting from ClapTrap with\n";
+	std::cout << this->_hitPoints << " hit points⚡, ";
 	std::cout << this->_energyPoints << " energy points🔋 and ";
 	std::cout << this->_attackDamage << " attack damage 🗡️.\n\n";
 	std::cout << RESET;
@@ -33,8 +33,8 @@ ScavTrap::ScavTrap( std::string name ) : ClapTrap( name )
 	this->_attackDamage = 20;
 	std::cout << CYAN;
 	std::cout << "ScavTrap " << RED << this->_name;
-	std::cout << CYAN <<" was created from ClapTrap with ";
-	std::cout << this->_hitPoints << " hit points⚡,\n";
+	std::cout << CYAN <<" was created from ClapTrap with\n";
+	std::cout << this->_hitPoints << " hit points⚡, ";
 	std::cout << this->_energyPoints << " energy points🔋 and ";
 	std::cout << this->_attackDamage << " attack damage 🗡️.\n\n";
 	std::cout << RESET;
@@ -100,7 +100,7 @@ void ScavTrap::attack( std::string const &target )
 		--this->_energyPoints;
 		std::cout << PURPLE;
 		std::cout << "ScavTrap " << RED << this->_name << PURPLE;
-		std::cout << " 💥attacks " << target << ", causing ";
+		std::cout << " 💥attacks " << target << ",\ncausing ";
 		std::cout << this->_attackDamage << " points of damage!\n";
 		std::cout << "ScavTrap " << RED << this->_name << PURPLE << " has now ";
 		std::cout << this->_energyPoints << " energy points🔋!\n";

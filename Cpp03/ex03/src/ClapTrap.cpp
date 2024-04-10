@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 20:17:27 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/06 19:34:13 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/09 21:07:38 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ ClapTrap::ClapTrap( void ) : _name("John Doe"), _hitPoints(10),
 							_energyPoints(10), _attackDamage(0)
 {
 	std::cout << YELLOW;
-	std::cout << "ClapTrap " << this->_name << " was created with ";
-	std::cout << this->_hitPoints << " hit points⚡,\n";
+	std::cout << "ClapTrap " << this->_name << " was created with\n";
+	std::cout << this->_hitPoints << " hit points⚡, ";
 	std::cout << this->_energyPoints << " energy points🔋 and ";
 	std::cout << this->_attackDamage << " attack damage 🗡️.\n\n";
 	std::cout << RESET;
@@ -28,8 +28,8 @@ ClapTrap::ClapTrap( std::string name ) : _name(name), _hitPoints(10),
 {
 	std::cout << CYAN;
 	std::cout << "ClapTrap " << RED << this->_name;
-	std::cout << CYAN <<" was created with ";
-	std::cout << this->_hitPoints << " hit points⚡,\n";
+	std::cout << CYAN <<" was created with\n";
+	std::cout << this->_hitPoints << " hit points⚡, ";
 	std::cout << this->_energyPoints << " energy points🔋 and ";
 	std::cout << this->_attackDamage << " attack damage 🗡️.\n\n";
 	std::cout << RESET;
@@ -114,7 +114,7 @@ void ClapTrap::attack( std::string const &target )
 		--this->_energyPoints;
 		std::cout << PURPLE;
 		std::cout << "ClapTrap " << RED << this->_name << PURPLE;
-		std::cout << " 💥attacks " << target << ", causing ";
+		std::cout << " 💥attacks " << target << ",\ncausing ";
 		std::cout << this->_attackDamage << " points of damage!\n";
 		std::cout << "ClapTrap " << RED << this->_name << PURPLE << " has now ";
 		std::cout << this->_energyPoints << " energy points🔋!\n";
@@ -170,7 +170,7 @@ void ClapTrap::beRepaired( unsigned int amount )
 		std::cout << "ClapTrap " << RED << this->_name << GREEN;
 		std::cout << " be 🩹repaired with " << amount << " hit points⚡!\n";
 		std::cout << "ClapTrap " << RED << this->_name << GREEN << " has now ";
-		std::cout << this->_hitPoints << " hit points⚡ and ";
+		std::cout << this->_hitPoints << " hit points⚡\nand ";
 		std::cout << this->_energyPoints << " energy points🔋!\n" << std::endl;
 		std::cout << RESET;
 		statusEnergy(this->_name, this->_energyPoints);

@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:15:46 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/07 16:10:12 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/09 21:08:25 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ FragTrap::FragTrap( void ) : ClapTrap()
 	this->_attackDamage = 30;
 	std::cout << YELLOW;
 	std::cout << "FragTrap " << this->_name;
-	std::cout << " was created inheriting from ClapTrap with ";
-	std::cout << this->_hitPoints << " hit points⚡,\n";
+	std::cout << " was created inheriting from ClapTrap with\n";
+	std::cout << this->_hitPoints << " hit points⚡, ";
 	std::cout << this->_energyPoints << " energy points🔋 and ";
 	std::cout << this->_attackDamage << " attack damage 🗡️.\n\n";
 	std::cout << RESET;
@@ -33,8 +33,8 @@ FragTrap::FragTrap( std::string name ) : ClapTrap( name )
 	this->_attackDamage = 30;
 	std::cout << CYAN;
 	std::cout << "FragTrap " << RED << this->_name;
-	std::cout << CYAN <<" was created from ClapTrap with ";
-	std::cout << this->_hitPoints << " hit points⚡,\n";
+	std::cout << CYAN <<" was created from ClapTrap with\n";
+	std::cout << this->_hitPoints << " hit points⚡, ";
 	std::cout << this->_energyPoints << " energy points🔋 and ";
 	std::cout << this->_attackDamage << " attack damage 🗡️.\n\n";
 	std::cout << RESET;

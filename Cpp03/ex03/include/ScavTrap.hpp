@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:15:34 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/07 15:20:28 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/09 20:59:05 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define SCAVTRAP_HPP
 
 # include "ClapTrap.hpp"
+
+# define S_ENERGY_POINTS 50
 
 class ScavTrap : virtual public ClapTrap
 {

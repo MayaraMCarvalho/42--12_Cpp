@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 12:05:19 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/07 17:35:08 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/09 21:08:51 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ DiamondTrap::DiamondTrap( void ) : ClapTrap("John Doe_clap_name"),
 {
 	this->_name = "John Doe";
 	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_energyPoints = S_ENERGY_POINTS;
 	this->_attackDamage = FragTrap::_attackDamage;
 	std::cout << YELLOW;
 	std::cout << "DiamondTrap " << this->_name;
-	std::cout << " was created inheriting from ";
-	std::cout << "ClapTrap, ScavTrap and FragTrap with ";
-	std::cout << this->_hitPoints << " hit points⚡,\n";
+	std::cout << " was created inheriting from";
+	std::cout << "\nClapTrap, ScavTrap and FragTrap with\n";
+	std::cout << this->_hitPoints << " hit points⚡, ";
 	std::cout << this->_energyPoints << " energy points🔋 and ";
 	std::cout << this->_attackDamage << " attack damage 🗡️.\n\n";
 	std::cout << RESET;
@@ -34,13 +34,13 @@ DiamondTrap::DiamondTrap( std::string name ) : ClapTrap( name + "_clap_name" ),
 {
 	this->_name = name;
 	this->_hitPoints = FragTrap::_hitPoints;
-	this->_energyPoints = ScavTrap::_energyPoints;
+	this->_energyPoints = S_ENERGY_POINTS;
 	this->_attackDamage = FragTrap::_attackDamage;
 	std::cout << CYAN;
 	std::cout << "DiamondTrap " << RED << this->_name;
-	std::cout << CYAN <<" was created from ";
-	std::cout << "ClapTrap, ScavTrap and FragTrap with ";
-	std::cout << this->_hitPoints << " hit points⚡,\n";
+	std::cout << CYAN <<" was created from";
+	std::cout << "\nClapTrap, ScavTrap and FragTrap with\n";
+	std::cout << this->_hitPoints << " hit points⚡, ";
 	std::cout << this->_energyPoints << " energy points🔋 and ";
 	std::cout << this->_attackDamage << " attack damage 🗡️.\n\n";
 	std::cout << RESET;
@@ -142,7 +142,7 @@ void DiamondTrap::beRepaired( unsigned int amount )
 		std::cout << "DiamondTrap " << RED << this->_name << GREEN;
 		std::cout << " be 🩹repaired with " << amount << " hit points⚡!\n";
 		std::cout << "DiamondTrap " << RED << this->_name << GREEN << " has now ";
-		std::cout << this->_hitPoints << " hit points⚡ and ";
+		std::cout << this->_hitPoints << " hit points⚡\nand ";
 		std::cout << this->_energyPoints << " energy points🔋!\n" << std::endl;
 		std::cout << RESET;
 		statusEnergy(this->_name, this->_energyPoints);
@@ -159,7 +159,7 @@ void DiamondTrap::whoAmI(void) const
 {
 	std::cout << BLUE;
 	std::cout << "Hi, i'm DiamondTrap " << YELLOW << this->_name << BLUE;
-	std::cout << " and my ClapTrap name is " << YELLOW << ClapTrap::_name;
+	std::cout << "\nand my ClapTrap name is " << YELLOW << ClapTrap::_name;
 	std::cout << BLUE << " !\n" << "I'm a ScavTrap and FragTrap too!";
 	std::cout << std::endl << RESET << std::endl;
 }

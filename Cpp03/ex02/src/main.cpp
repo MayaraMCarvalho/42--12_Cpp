@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 20:00:18 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/06 12:10:54 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/09 21:02:10 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int	main ( void )
 	std::cout << "---------------------------------------------------------------" << std::endl;
 	std::cout << "************************ FRAGTRAP TEST ************************" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
-	std::cout << "ClapTrap a is created with name John" << std::endl;
-	std::cout << "ScavTrap b is created with name Bob" << std::endl;
-	std::cout << "FragTrap b is created with name Harry" << std::endl;
+	std::cout << "ClapTrap John is created with name John" << std::endl;
+	std::cout << "ScavTrap Bob is created with name Bob" << std::endl;
+	std::cout << "FragTrap Harry is created with name Harry" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 
 	ClapTrap john("🏹John");
