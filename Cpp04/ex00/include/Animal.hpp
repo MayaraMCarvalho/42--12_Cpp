@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:57:51 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/10 18:44:28 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/10 19:11:17 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ class Animal
 		Animal( void );
 		Animal( std::string type );
 		Animal( Animal const &copy );
-		~Animal( void );
+		virtual ~Animal( void );
 
 		Animal& operator=( Animal const &other );
 
 		std::string		getType( void ) const;
-		virtual void	makeSound( void ) const = 0;
+		virtual void	makeSound( void ) const;
 
 };
 

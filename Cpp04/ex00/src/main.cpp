@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:56:43 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/10 18:06:31 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/10 19:13:27 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ static void subject( void )
 	i->makeSound();
 	j->makeSound();
 	meta->makeSound();
+
+	delete meta;
+	delete j;
+	delete i;
+
 }
 
 int	main ( void )

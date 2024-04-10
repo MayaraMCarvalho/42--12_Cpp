@@ -30,7 +30,7 @@ Dog::Dog( Dog const &copy ) : Animal( copy )
 Dog::~Dog( void )
 {
 	std::cout << RED;
-	std::cout << "Dog🦴 was destroyed!";
+	std::cout << "Dog🦴 was destroyed!" << std::endl;
 	std::cout << RESET;
 }
 
@@ -46,7 +46,9 @@ Dog& Dog::operator=( Dog const &other )
 	return *this;
 }
 
-void		Dog::makeSound( void ) const
+void Dog::makeSound( void ) const
 {
-	std::cout << "Au au au...🐶" << std::endl;
+	std::cout << GREEN;
+	std::cout << "Woof woof woof...🐶" << std::endl;
+	std::cout << RESET;
 }

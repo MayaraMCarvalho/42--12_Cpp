@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:57:35 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/10 18:45:20 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/10 19:11:42 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Animal::Animal( Animal const &copy )
 Animal::~Animal( void )
 {
 	std::cout << RED;
-	std::cout << "Animal was destroyed!";
+	std::cout << "Animal was destroyed!" << std::endl;;
 	std::cout << RESET;
 }
 
@@ -53,7 +53,11 @@ Animal& Animal::operator=( Animal const &other )
 	return *this;
 }
 
-std::string	Animal::getType( void ) const
+std::string Animal::getType( void ) const
 {
 	return this->type;
+}
+
+void Animal::makeSound( void ) const
+{
 }
