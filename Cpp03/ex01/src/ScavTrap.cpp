@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:15:46 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/06 11:39:17 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/16 10:00:37 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,56 +116,6 @@ void ScavTrap::attack( std::string const &target )
 			status(this->_name, 0);
 		else if (this->_energyPoints == 0)
 			status(this->_name, 1);
-	}
-}
-
-void ScavTrap::takeDamage( unsigned int amount )
-{
-	if (this->_hitPoints > 0)
-	{
-		this->_hitPoints -= amount;
-		std::cout << BLUE;
-		std::cout << "ScavTrap " << RED << this->_name << BLUE;
-		std::cout << " take " << amount << " points of damage!😲🤕\n";
-		std::cout << "ScavTrap " << RED << this->_name << BLUE << " has now ";
-		std::cout << this->_hitPoints << " hit points⚡!\n" << std::endl;
-		std::cout << RESET;
-		if (this->_hitPoints <= 0)
-			status(this->_name, 0);
-	}
-	else
-	{
-		std::cout << RED;
-		std::cout << "Can't take damage!!\n";
-		status(this->_name, 0);
-	}
-}
-
-void ScavTrap::beRepaired( unsigned int amount )
-{
-	if (this->_energyPoints > 0)
-	{
-		std::cout << GREEN;
-		if (this->_hitPoints <= 0)
-		{
-			std::cout << "ScavTrap " << RED << this->_name << GREEN;
-			std::cout << " had his life 🐣restored\n";
-		}
-		--this->_energyPoints;
-		this->_hitPoints += amount;
-		std::cout << "ScavTrap " << RED << this->_name << GREEN;
-		std::cout << " be 🩹repaired with " << amount << " hit points⚡!\n";
-		std::cout << "ScavTrap " << RED << this->_name << GREEN << " has now ";
-		std::cout << this->_hitPoints << " hit points⚡ and ";
-		std::cout << this->_energyPoints << " energy points🔋!\n" << std::endl;
-		std::cout << RESET;
-		statusEnergy(this->_name, this->_energyPoints);
-	}
-	else
-	{
-		std::cout << RED;
-		std::cout << "Can't be repaired!\n";
-		status(this->_name, 1);
 	}
 }
 

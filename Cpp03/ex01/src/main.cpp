@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 20:00:18 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/09 21:02:22 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/16 10:01:04 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ int	main ( void )
 
 	john.beRepaired(5);
 
+	std::cout << GRAY;
 	std::cout << "---------------------------------------------------------------" << std::endl;
 	std::cout << "Bob give up from war, and he is now a gatekeeper" << std::endl;
 	std::cout << "---------------------------------------------------------------" << std::endl;

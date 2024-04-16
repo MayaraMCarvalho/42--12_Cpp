@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 15:15:34 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/06 11:39:33 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/16 10:00:45 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ class ScavTrap : public ClapTrap
 
 		ScavTrap&	operator=( ScavTrap const &other );
 
-		void		takeDamage( unsigned int amount );
-		void		beRepaired( unsigned int amount );
 		void		attack(std::string const &target);
 		void		guardGate(void);
 };
