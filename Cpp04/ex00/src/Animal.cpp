@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:57:35 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/18 10:41:43 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:18:55 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Animal::Animal( Animal const &copy )
 Animal::~Animal( void )
 {
 	std::cout << RED;
-	std::cout << "Animal was destroyed!" << std::endl;;
+	std::cout << "Animal was destroyed!\n" << std::endl;;
 	std::cout << RESET;
 }
 
