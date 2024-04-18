@@ -1,45 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:57:51 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/18 11:12:35 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:19:04 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-# define ANIMAL_HPP
+#ifndef WRONGANIMAL_HPP
+# define WRONGANIMAL_HPP
 
 # include <iostream>
 
 // Color codes as global variables
-const std::string RESET = "\033[0m";
-const std::string RED = "\033[31;1m";
-const std::string GREEN = "\033[32;1m";
-const std::string YELLOW = "\033[33;1m";
-const std::string BLUE = "\033[34;1m";
-const std::string PURPLE = "\033[35;1m";
-const std::string CYAN = "\033[36;1m";
-const std::string GRAY = "\033[37;1m";
+const std::string WRESET = "\033[0m";
+const std::string WRED = "\033[31;1m";
+const std::string WGREEN = "\033[32;1m";
+const std::string WYELLOW = "\033[33;1m";
+const std::string WBLUE = "\033[34;1m";
+const std::string WPURPLE = "\033[35;1m";
+const std::string WCYAN = "\033[36;1m";
+const std::string WGRAY = "\033[37;1m";
 
-class Animal
+class WrongAnimal
 {
 	protected:
 		std::string	type;
 
 	public:
-		Animal( void );
-		Animal( std::string type );
-		Animal( Animal const &copy );
-		virtual ~Animal( void );
+		WrongAnimal( void );
+		WrongAnimal( std::string type );
+		WrongAnimal( WrongAnimal const &copy );
+		virtual ~WrongAnimal( void );
 
-		Animal& operator=( Animal const &other );
+		WrongAnimal& operator=( WrongAnimal const &other );
 
 		std::string		getType( void ) const;
-		virtual void	makeSound( void ) const;
+		void	makeSound( void ) const;
 
 };
 

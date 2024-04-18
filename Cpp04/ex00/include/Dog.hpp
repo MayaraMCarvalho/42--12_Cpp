@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:57:51 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/10 18:49:40 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/18 11:16:45 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Dog : public Animal
 
 		Dog& operator=( Dog const &other );
 
-		void		makeSound( void ) const;
+		void makeSound( void ) const;
 
 };
 

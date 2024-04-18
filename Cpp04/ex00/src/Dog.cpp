@@ -17,14 +17,15 @@ Dog::Dog( void ): Animal( "Dog" )
 	std::cout << YELLOW;
 	std::cout << "Dog🐕 was created!" << std::endl;
 	std::cout << RESET;
+	this->type = "Dog🐕";
 }
 
 Dog::Dog( Dog const &copy ) : Animal( copy )
 {
 	std::cout << GRAY;
 	std::cout << "A copy Dog🐕 was created!" << std::endl;
-	*this = copy;
 	std::cout << RESET;
+	*this = copy;
 }
 
 Dog::~Dog( void )
@@ -48,7 +49,7 @@ Dog& Dog::operator=( Dog const &other )
 
 void Dog::makeSound( void ) const
 {
-	std::cout << GREEN;
+	std::cout << PURPLE;
 	std::cout << "Woof woof woof...🐶" << std::endl;
 	std::cout << RESET;
 }

@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:57:35 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/10 19:11:57 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:35:49 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ Cat::Cat( void ) : Animal( "Cat" )
 	std::cout << YELLOW;
 	std::cout << "Cat🐈 was created!" << std::endl;
 	std::cout << RESET;
+	this->type = "Cat🐈";
 }
 
 
@@ -24,8 +25,8 @@ Cat::Cat( Cat const &copy ) : Animal( copy )
 {
 	std::cout << GRAY;
 	std::cout << "A copy Cat🐈 was created!" << std::endl;
-	*this = copy;
 	std::cout << RESET;
+	*this = copy;
 }
 
 Cat::~Cat( void )
@@ -50,6 +51,6 @@ Cat& Cat::operator=( Cat const &other )
 void Cat::makeSound( void ) const
 {
 	std::cout << PURPLE;
-	std::cout << "Meow meow...😺" << std::endl;
+	std::cout << "Meow meow...😸" << std::endl;
 	std::cout << RESET;
 }

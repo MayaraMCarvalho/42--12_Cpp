@@ -6,13 +6,13 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/04/10 18:28:46 by macarval         ###   ########.fr        #
+#    Updated: 2024/04/18 08:52:45 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= polymorphism
 
-SRCS		= main.cpp Animal.cpp Dog.cpp Cat.cpp
+SRCS		= main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
 
 VPATH		= src/
 OBJS_PATH	= obj

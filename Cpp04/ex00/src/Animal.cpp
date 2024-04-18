@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:57:35 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/10 19:11:42 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/18 10:41:43 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ Animal::Animal( void )
 
 Animal::Animal( std::string type ) : type(type)
 {
-	std::cout << CYAN;
-	std::cout << "Animal " << this->type << " was created!" << std::endl;
+	std::cout << GREEN;
+	std::cout << "Animal of the type " << this->type << " was created!" << std::endl;
 	std::cout << RESET;
 }
 
@@ -30,8 +30,8 @@ Animal::Animal( Animal const &copy )
 {
 	std::cout << GRAY;
 	std::cout << "A copy Animal was created!" << std::endl;
-	*this = copy;
 	std::cout << RESET;
+	*this = copy;
 }
 
 Animal::~Animal( void )
@@ -60,4 +60,7 @@ std::string Animal::getType( void ) const
 
 void Animal::makeSound( void ) const
 {
+	std::cout << GRAY;
+	std::cout << "Animal sound..." << std::endl;
+	std::cout << RESET;
 }
