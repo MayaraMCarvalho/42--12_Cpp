@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Brain.hpp                                          :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/18 14:22:10 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/19 17:06:53 by macarval         ###   ########.fr       */
+/*   Created: 2024/04/10 17:57:51 by macarval          #+#    #+#             */
+/*   Updated: 2024/04/19 17:05:33 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-# include <iostream>
-# include <cmath>
-# include "Animal.hpp"
+#include "AAnimal.hpp"
+#include "Brain.hpp"
 
-class Brain
+class Cat : public AAnimal
 {
 	private:
-		std::string	ideas[100];
+		Brain* _brain;
 
 	public:
-		Brain( void );
-		Brain( Brain const &copy );
-		~Brain( void );
+		Cat( void );
+		Cat( Cat const &copy );
+		~Cat( void );
 
-		Brain& operator=( Brain const &other );
+		Cat& operator=( Cat const &other );
 
+		void makeSound( void ) const;
 		std::string getIdea( int n ) const;
 };
 

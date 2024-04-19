@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/18 14:22:10 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/19 17:06:53 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/19 17:06:41 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <iostream>
 # include <cmath>
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 
 class Brain
 {
