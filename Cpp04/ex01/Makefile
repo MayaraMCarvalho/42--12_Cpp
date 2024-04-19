@@ -6,13 +6,14 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/04/18 16:04:17 by macarval         ###   ########.fr        #
+#    Updated: 2024/04/19 16:43:35 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= brain
 
-SRCS		= main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+SRCS		= main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp \
+			WrongAnimal.cpp WrongCat.cpp
 
 VPATH		= src/
 OBJS_PATH	= obj
