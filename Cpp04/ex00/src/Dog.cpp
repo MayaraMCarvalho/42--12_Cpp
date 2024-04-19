@@ -17,7 +17,7 @@ Dog::Dog( void ): Animal( "Dog" )
 	std::cout << YELLOW;
 	std::cout << "Dog🐕 was created!" << std::endl;
 	std::cout << RESET;
-	this->type = "Dog🐕";
+	this->type = "Dog";
 }
 
 Dog::Dog( Dog const &copy ) : Animal( copy )

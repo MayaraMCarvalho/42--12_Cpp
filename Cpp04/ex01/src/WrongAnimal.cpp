@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:57:35 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/19 11:01:01 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:20:03 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ WrongAnimal::WrongAnimal( WrongAnimal const &copy )
 WrongAnimal::~WrongAnimal( void )
 {
 	std::cout << WRED;
-	std::cout << "WrongAnimal was destroyed!" << std::endl;;
+	std::cout << "WrongAnimal was destroyed!\n" << std::endl;;
 	std::cout << WRESET;
 }
 

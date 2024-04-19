@@ -1,45 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:57:35 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/19 11:00:21 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:19:34 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Animal.hpp"
 
-Cat::Cat( void ) : Animal( "Cat" )
+Animal::Animal( void )
 {
 	std::cout << YELLOW;
-	std::cout << "Cat🐈 was created!" << std::endl;
+	std::cout << "Animal was created!" << std::endl;
 	std::cout << RESET;
-	this->type = "Cat";
 }
 
+Animal::Animal( std::string type ) : type(type)
+{
+	std::cout << GREEN;
+	std::cout << "Animal of the type " << this->type << " was created!" << std::endl;
+	std::cout << RESET;
+}
 
-Cat::Cat( Cat const &copy ) : Animal( copy )
+Animal::Animal( Animal const &copy )
 {
 	std::cout << GRAY;
-	std::cout << "A copy Cat🐈 was created!" << std::endl;
+	std::cout << "A copy Animal was created!" << std::endl;
 	std::cout << RESET;
 	*this = copy;
 }
 
-Cat::~Cat( void )
+Animal::~Animal( void )
 {
 	std::cout << RED;
-	std::cout << "Cat🐾 was destroyed!" << std::endl;
+	std::cout << "Animal was destroyed!\n" << std::endl;;
 	std::cout << RESET;
 }
 
-Cat& Cat::operator=( Cat const &other )
+Animal& Animal::operator=( Animal const &other )
 {
 	std::cout << GREEN;
-	std::cout << "Cat🐈 copied by assignment operator" << std::endl;
+	std::cout << "Animal copied by assignment operator" << std::endl;
 	std::cout << RESET;
 	if (this != &other)
 	{
@@ -48,9 +53,14 @@ Cat& Cat::operator=( Cat const &other )
 	return *this;
 }
 
-void Cat::makeSound( void ) const
+std::string Animal::getType( void ) const
 {
-	std::cout << PURPLE;
-	std::cout << "Meow meow...😸" << std::endl;
+	return this->type;
+}
+
+void Animal::makeSound( void ) const
+{
+	std::cout << GRAY;
+	std::cout << "Animal sound..." << std::endl;
 	std::cout << RESET;
 }

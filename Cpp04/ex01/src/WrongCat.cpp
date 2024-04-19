@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:57:35 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/19 11:01:23 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/18 13:35:21 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ WrongCat::WrongCat( void ) : WrongAnimal( "WrongCat" )
 	std::cout << WYELLOW;
 	std::cout << "WrongCat🐅 was created!" << std::endl;
 	std::cout << WRESET;
-	this->type = "WrongCat";
 }
 
 
