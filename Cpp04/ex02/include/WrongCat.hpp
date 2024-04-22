@@ -6,12 +6,12 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:57:51 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/18 08:51:57 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/22 20:08:42 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WRONGCAT_HPP
-# define WORONGCAT_HPP
+# define WRONGCAT_HPP
 
 #include "WrongAnimal.hpp"
 
