@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:57:51 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/19 17:01:18 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/22 09:30:35 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class AAnimal
 		AAnimal& operator=( AAnimal const &other );
 
 		std::string		getType( void ) const;
-		virtual void	makeSound( void ) const;
+		virtual void	makeSound( void ) const = 0;
 
 };
 

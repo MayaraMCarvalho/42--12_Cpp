@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:56:43 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/19 17:03:58 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/22 09:31:46 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main ( void )
 {
 	std::cout << BLUE << std::endl;
 	std::cout << "---------------------------------------------------------\n";
-	std::cout << "********************* BRAIN TEST **********************\n";
+	std::cout << "********************* ABSTRACT TEST *********************\n";
 	std::cout << "---------------------------------------------------------\n";
 	std::cout << CYAN;
 	std::cout << "Create a Animal array with 10 elements." << std::endl;

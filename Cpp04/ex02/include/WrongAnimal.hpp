@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:57:51 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/18 13:19:04 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/22 09:24:35 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ class WrongAnimal
 		WrongAnimal& operator=( WrongAnimal const &other );
 
 		std::string		getType( void ) const;
-		void	makeSound( void ) const;
+		void			makeSound( void ) const;
 
 };
 

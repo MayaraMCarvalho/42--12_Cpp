@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*   AAnimal.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 17:57:35 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/19 17:02:15 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/22 09:35:09 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,4 @@ AAnimal& AAnimal::operator=( AAnimal const &other )
 std::string AAnimal::getType( void ) const
 {
 	return this->type;
-}
-
-void AAnimal::makeSound( void ) const
-{
-	std::cout << GRAY;
-	std::cout << "A Animal sound..." << std::endl;
-	std::cout << RESET;
 }
