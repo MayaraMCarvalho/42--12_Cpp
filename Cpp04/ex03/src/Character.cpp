@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:26:01 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/22 18:07:53 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/22 21:02:33 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ Character::Character( void ) : _name("Unknown")
 {
 	for (int i = 0; i < INV_SIZE; ++i)
 		_inventory[i] = NULL;
+	for (int i = 0; i < FLOOR_SIZE; ++i)
+		_floor[i] = NULL;
 	std::cout << PURPLE;
 	std::cout << "A new materia of named 'Unknown' has been created!\n";
 	std::cout << RESET;
@@ -25,6 +27,8 @@ Character::Character( std::string const &name ) : _name(name)
 {
 	for (int i = 0; i < INV_SIZE; ++i)
 		_inventory[i] = NULL;
+	for (int i = 0; i < FLOOR_SIZE; ++i)
+		_floor[i] = NULL;
 	std::cout << PURPLE;
 	std::cout << "A new Character named '" << this->_name;
 	std::cout << "' has been created!\n";
@@ -45,9 +49,16 @@ Character::Character( Character const &copy )
 
 Character::~Character( void )
 {
+	for (int i = 0; i < FLOOR_SIZE; ++i)
+	{
+		if (this->_floor[i] != NULL)
+			delete this->_floor[i];
+	}
 	for (int i = 0; i < INV_SIZE; ++i)
+	{
 		if (this->_inventory[i])
 			delete this->_inventory[i];
+	}
 	std::cout << RED;
 	std::cout << "A character named '" << this->_name;
 	std::cout << "' has been destroyed!" << std::endl;
@@ -110,7 +121,14 @@ void Character::unequip(int idx)
 		std::cout << "' unequipped from character '";
 		std::cout << this->_name << "'!" << std::endl;
 		std::cout << RESET;
-		delete this->_inventory[idx];
+		for (int i = 0; i < FLOOR_SIZE; ++i)
+		{
+			if (!this->_floor[i])
+			{
+				this->_floor[i] = this->_inventory[idx];
+				break ;
+			}
+		}
 		this->_inventory[idx] = NULL;
 }
 

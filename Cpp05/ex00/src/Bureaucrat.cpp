@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 19:07:15 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/22 19:57:09 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/22 20:20:00 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,12 @@ int Bureaucrat::getGrade( void ) const
 	return this->_grade;
 }
 
-void Bureaucrat::upGrade ( void )const
+void Bureaucrat::upGrade ( void )
 {
 	this->_grade--;
 }
 
-void Bureaucrat::downGrade ( void )const
+void Bureaucrat::downGrade ( void )
 {
 	this->_grade++;
 }

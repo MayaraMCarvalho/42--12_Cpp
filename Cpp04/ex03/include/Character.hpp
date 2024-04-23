@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 10:32:29 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/22 14:30:11 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/22 20:56:21 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,14 @@
 # include "ICharacter.hpp"
 
 # define INV_SIZE 4
+# define FLOOR_SIZE 100
 
 class Character : public ICharacter
 {
 	private:
 		std::string	_name;
 		AMateria*	_inventory[INV_SIZE];
+		AMateria*	_floor[FLOOR_SIZE];
 
 	public:
 		Character( void );
