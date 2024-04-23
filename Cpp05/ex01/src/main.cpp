@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 19:07:34 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/23 15:36:47 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/23 17:00:04 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,18 +116,121 @@ int main ( void )
 	std::cout << BLUE << std::endl;
 	std::cout << "---------------------------------------------------------\n";
 	std::cout << CYAN;
-	std::cout << "Creation of form 'Default'\n";
+	std::cout << "Creation of a form 'Default'\n";
 	std::cout << BLUE;
 	std::cout << "---------------------------------------------------------\n";
+
 	try
 	{
 		Form f0;
 		std::cout << f0;
 	}
-	catch (std::exception &e)
+		catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
+
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "Creation of a form with grade sign too low.\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------\n";
+
+	try
+	{
+		Form l1("Low1", 151, 2);
+		std::cout << l1;
+	}
+		catch (std::exception &e)
+	{
+		std::cout << RED << e.what() << std::endl;
+	}
+
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "Creation of a form with grade execute too low.\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------\n";
+
+	try
+	{
+		Form l2("Low2", 25, 151);
+		std::cout << l2;
+	}
+		catch (std::exception &e)
+	{
+		std::cout << RED << e.what() << std::endl;
+	}
+
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "Creation of a form with grade sign and execute too low.\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------\n";
+	try
+	{
+		Form l3("Low3", 151, 160);
+		std::cout << l3;
+	}
+		catch (std::exception &e)
+	{
+		std::cout << RED << e.what() << std::endl;
+	}
+
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "Creation of a form with grade sign too high.\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------\n";
+
+	try
+	{
+		Form h1("high1", 0, 2);
+		std::cout << h1;
+	}
+		catch (std::exception &e)
+	{
+		std::cout << RED << e.what() << std::endl;
+	}
+
+
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "Creation of a form with grade execute too high.\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------\n";
+
+	try
+	{
+		Form h2("high2", 15, -8);
+		std::cout << h2;
+	}
+		catch (std::exception &e)
+	{
+		std::cout << RED << e.what() << std::endl;
+	}
+
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "Creation of a form with grade sign and execute too high.\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------\n";
+	try
+	{
+		Form h3("high3", 0, 0);
+		std::cout << h3;
+	}
+		catch (std::exception &e)
+	{
+		std::cout << RED << e.what() << std::endl;
+	}
+
 
 	std::cout << BLUE << std::endl;
 	std::cout << "---------------------------------------------------------\n";
@@ -159,7 +262,7 @@ int main ( void )
 	}
 	catch (std::exception &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << RED << e.what() << std::endl;
 	}
 
 	std::cout << BLUE << std::endl;
@@ -195,7 +298,7 @@ int main ( void )
 	}
 	catch (std::exception &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << RED << e.what() << std::endl;
 	}
 
 	std::cout << BLUE << std::endl;
