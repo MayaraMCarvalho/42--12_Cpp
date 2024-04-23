@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 19:07:15 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/22 20:20:00 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/22 22:14:18 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,25 @@
 
 Bureaucrat::Bureaucrat( void ) : _name("Unknown"), _grade(150)
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << PURPLE;
+	std::cout << "A bureaucrat has been created with default values\n\n";
+	std::cout << RESET;
 }
 
-Bureaucrat::Bureaucrat( std::string const &name, int grade ) : _name(name), _grade(grade)
+Bureaucrat::Bureaucrat( std::string const &name, int grade ) : _name(name)
 {
-	std::cout << "Default constructor called" << std::endl;
+	if (grade < 1)
+		throw GradeTooHighException();
+	else if (grade > 150)
+		throw GradeTooLowException();
+	 else
+		this->_grade = grade;
+	std::cout << GREEN;
+	std::cout << "A bureaucrat has been created\nwith name ";
+	std::cout << YELLOW << this->_name;
+	std::cout << GREEN << " and grade ";
+	std::cout << YELLOW << this->_grade << "\n" << std::endl;
+	std::cout << RESET;
 }
 
 Bureaucrat::Bureaucrat( Bureaucrat const &copy )
@@ -30,7 +43,9 @@ Bureaucrat::Bureaucrat( Bureaucrat const &copy )
 
 Bureaucrat::~Bureaucrat( void )
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << RED;
+	std::cout << "A bureaucrat has been destroyed\n" << std::endl;
+	std::cout << RESET;
 }
 
 Bureaucrat& Bureaucrat::operator=( Bureaucrat const &other )
@@ -42,10 +57,12 @@ Bureaucrat& Bureaucrat::operator=( Bureaucrat const &other )
 	return *this;
 }
 
-void Bureaucrat::operator<<( Bureaucrat const &actual )
+std::ostream &operator<<(std::ostream& out, Bureaucrat const &actual)
 {
-	std::cout << actual.getName() << ", bureaucrat grade ";
-	std::cout << actual.getGrade() << "." << std::endl;
+
+	out << PURPLE << actual.getName() << ", bureaucrat grade "
+			<< actual.getGrade() << ".\n\n";
+	return out;
 }
 
 std::string const Bureaucrat::getName( void ) const
@@ -60,11 +77,34 @@ int Bureaucrat::getGrade( void ) const
 
 void Bureaucrat::upGrade ( void )
 {
-	this->_grade--;
+	if (this->_grade - 1 < 1)
+		throw GradeTooHighException();
+	else
+	{
+		this->_grade--;
+		std::cout << BLUE << this->_name << " has been promoted to grade ";
+		std::cout << this->_grade << RESET << std::endl;
+	}
 }
 
 void Bureaucrat::downGrade ( void )
 {
-	this->_grade++;
+	if (this->_grade + 1 > 150)
+		throw GradeTooLowException();
+	else
+	{
+		this->_grade++;
+		std::cout << GRAY << this->_name << " has been demoted to grade ";
+		std::cout << this->_grade << RESET << std::endl;
+	}
 }
 
+const char *Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "Grade too high!!!";
+}
+
+const char *Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Grade too low!!!";
+}
