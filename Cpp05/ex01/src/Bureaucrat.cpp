@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 19:07:15 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/23 15:23:24 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:36:23 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Bureaucrat::Bureaucrat( void ) : _name("Unknown"), _grade(LOWGRADE)
 
 Bureaucrat::Bureaucrat( std::string const &name, int grade ) : _name(name)
 {
-	if (grade < HIGHGRADE)
+	if (grade < 1)
 		throw GradeTooHighException();
 	else if (grade > LOWGRADE)
 		throw GradeTooLowException();
@@ -44,7 +44,7 @@ Bureaucrat::Bureaucrat( Bureaucrat const &copy )
 Bureaucrat::~Bureaucrat( void )
 {
 	std::cout << RED;
-	std::cout << "A bureaucrat has been destroyed\n" << std::endl;
+	std::cout << "A bureaucrat has been destroyed!" << std::endl;
 	std::cout << RESET;
 }
 
@@ -96,6 +96,27 @@ void Bureaucrat::downGrade ( void )
 		this->_grade++;
 		std::cout << GRAY << this->_name << " has been demoted to grade ";
 		std::cout << this->_grade << RESET << std::endl;
+	}
+}
+
+void Bureaucrat::signForm( Form &form )
+{
+	try
+	{
+		form.beSigned(*this);
+		std::cout << GREEN;
+		std::cout << this->_name << BLUE << "👔 signed ";
+		std::cout  << GREEN << form.getName() << BLUE << "🖊️ !!\n\n";
+		std::cout << RESET;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << BLUE << this->_name;
+		std::cout << YELLOW  << "👔 couldn’t❌ sign ";
+		std::cout << BLUE << form.getName();
+		std::cout << YELLOW << "🖊️  because " << CYAN;
+		std::cout << e.what() << "\n\n" << RESET;
+		std::cout << RESET;
 	}
 }
 

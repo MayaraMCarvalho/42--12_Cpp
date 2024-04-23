@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 19:07:34 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/23 15:25:50 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:36:47 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main ( void )
 	std::cout << BLUE << std::endl;
 	std::cout << "---------------------------------------------------------\n";
 	std::cout << GRAY;
-	std::cout << "******************** BUREAUCRAT TEST ********************\n";
+	std::cout << "*********************** FORM TEST ***********************\n";
 	std::cout << BLUE;
 	std::cout << "---------------------------------------------------------\n";
 	std::cout << CYAN;
@@ -40,23 +40,6 @@ int main ( void )
 		std::cout << b1;
 		b1.upGrade();
 		std::cout << b1;
-	}
-	catch (std::exception &e)
-	{
-		std::cout << RED << e.what() << RESET << std::endl;
-	}
-
-	std::cout << BLUE << std::endl;
-	std::cout << "---------------------------------------------------------\n";
-	std::cout << CYAN;
-	std::cout << "Creation of bureaucrat 'Default'" << std::endl;
-	std::cout << BLUE;
-	std::cout << "---------------------------------------------------------\n";
-
-	try
-	{
-		Bureaucrat d;
-		std::cout << d;
 	}
 	catch (std::exception &e)
 	{
@@ -114,7 +97,7 @@ int main ( void )
 	std::cout << BLUE << std::endl;
 	std::cout << "---------------------------------------------------------\n";
 	std::cout << CYAN;
-	std::cout << "Creation of bureaucrat 'James' with grade 151..." << std::endl;
+	std::cout << "Creation of bureaucrat 'James' with grade 151...\n";
 	std::cout << "Bureaucrat 'James' can't be created, because\n";
 	std::cout << "the grade is too low..." << std::endl;
 	std::cout << BLUE;
@@ -132,8 +115,93 @@ int main ( void )
 
 	std::cout << BLUE << std::endl;
 	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "Creation of form 'Default'\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------\n";
+	try
+	{
+		Form f0;
+		std::cout << f0;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "Creation of form 'Form1' with grade to sign 2\n";
+	std::cout << "and grade to execute 2..." << std::endl;
+	std::cout << "Creation of Bureaucrat 'Jane' with grade 3...\n";
+	std::cout << "Bureaucrat 'Jane' tries to sign form 'Form1'...\n";
+	std::cout << "Bureaucrat 'Jane' can't sign form 'Form1',\n";
+	std::cout << "because his grade is too low..." << std::endl;
+	std::cout << "Bureaucrat 'Jane' increments his grade..." << std::endl;
+	std::cout << "Bureaucrat 'Jane' signs form 'Form1'..." << std::endl;
+	std::cout << "Bureaucrat 'Jane' can sign form 'Form1',\n";
+	std::cout << "because his grade is high enough..." << std::endl;
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------\n";
+	try
+	{
+		Form f1("Form1", 2, 2);
+		std::cout << f1;
+		Bureaucrat b5("Jane", 3);
+		std::cout << b5;
+		b5.signForm(f1);
+		std::cout << f1;
+		b5.upGrade();
+		std::cout << b5;
+		b5.signForm(f1);
+		std::cout << f1;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "Creation of form 'Form2' with grade to sign 100\n";
+	std::cout << "and grade to execute 100..." << std::endl;
+	std::cout << "Creation of Bureaucrat 'Peter' with grade 100...\n";
+	std::cout << "Bureaucrat 'Peter' signs form 'Form2'..." << std::endl;
+	std::cout << "Bureaucrat 'Peter' can sign form 'Form2',\n";
+	std::cout << "because his grade is high enough..." << std::endl;
+	std::cout << "Bureaucrat 'Peter' decrements his grade..." << std::endl;
+	std::cout << "Bureaucrat 'Peter' tries to sign form 'Form2'...\n";
+	std::cout << "Bureaucrat 'Peter' can't sign form 'Form2',\n";
+	std::cout << "because his grade is too low..." << std::endl;
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------\n";
+	try
+	{
+		Form f2("Form2", 100, 100);
+		std::cout << f2;
+
+		Bureaucrat b6("Peter", 100);
+		std::cout << b6;
+
+		b6.signForm(f2);
+		std::cout << f2;
+
+		b6.downGrade();
+		std::cout << b6;
+		b6.signForm(f2);
+		std::cout << f2;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
 	std::cout << GRAY;
-	std::cout << "---------------------- END OF TEST ----------------------\n";
+	std::cout << "********************** END OF TEST **********************\n";
 	std::cout << BLUE;
 	std::cout << "---------------------------------------------------------\n";
 

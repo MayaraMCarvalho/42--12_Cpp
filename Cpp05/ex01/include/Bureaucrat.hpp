@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 19:06:33 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/23 15:22:13 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/23 15:26:19 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <stdexcept>
+
+#include "Form.hpp"
 
 # define HIGHGRADE	1
 # define LOWGRADE	150
@@ -28,6 +30,8 @@ const std::string BLUE = "\033[34;1m";
 const std::string PURPLE = "\033[35;1m";
 const std::string CYAN = "\033[36;1m";
 const std::string GRAY = "\033[37;1m";
+
+class Form;
 
 class Bureaucrat
 {
@@ -47,6 +51,7 @@ class Bureaucrat
 		int					getGrade( void ) const;
 		void				upGrade ( void );
 		void				downGrade ( void );
+		void				signForm( Form &form );
 
 		class GradeTooHighException : public std::exception
 		{

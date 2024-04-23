@@ -6,13 +6,13 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/03/26 22:35:16 by macarval         ###   ########.fr        #
+#    Updated: 2024/04/23 10:27:50 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=
+NAME		= Form
 
-SRCS		= main.cpp
+SRCS		= main.cpp Bureaucrat.cpp Form.cpp
 
 VPATH		= src/
 OBJS_PATH	= obj
