@@ -6,13 +6,14 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/03/26 22:35:16 by macarval         ###   ########.fr        #
+#    Updated: 2024/04/26 15:22:39 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=
+NAME		= AForm
 
-SRCS		= main.cpp
+SRCS		= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
+			RobotomyRequestForm.cpp  PresidentialPardonForm.cpp Tests.cpp
 
 VPATH		= src/
 OBJS_PATH	= obj
@@ -50,7 +51,7 @@ clean:
 			@echo "$(CYAN)$(NAME): $(GREEN)Clean done!$(RESET)"
 
 fclean:		clean
-			@rm -f $(NAME)
+			@rm -f $(NAME) *_shrubbery
 			@echo "$(CYAN)$(NAME): $(GREEN)Full clean done!$(RESET)"
 
 
