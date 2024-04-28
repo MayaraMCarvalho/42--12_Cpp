@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 19:07:15 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/26 15:24:07 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/28 15:51:34 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ void Bureaucrat::downGrade ( void )
 	}
 }
 
-void Bureaucrat::signForm( AForm &form )
+void Bureaucrat::signForm( Form &form )
 {
 	try
 	{
@@ -127,7 +127,7 @@ void Bureaucrat::signForm( AForm &form )
 	}
 }
 
-void Bureaucrat::executeForm(AForm const & form)
+void Bureaucrat::executeForm(Form const & form)
 {
 	try
 	{

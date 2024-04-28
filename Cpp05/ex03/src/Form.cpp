@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AForm.cpp                                           :+:      :+:    :+:   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:27:23 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/23 15:36:11 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/28 18:17:09 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
+#include "Form.hpp"
 
 // Constructor & Destructor ===================================================
-AForm::AForm( void ) : _name("Default"),_gradeSign(HIGHGRADE), _gradeExec(HIGHGRADE)
+Form::Form( void ) : _name("Default"), _gradeSign(HIGHGRADE), _gradeExec(HIGHGRADE)
 {
 	this->_signed = false;
 	std::cout << GREEN;
@@ -21,7 +21,7 @@ AForm::AForm( void ) : _name("Default"),_gradeSign(HIGHGRADE), _gradeExec(HIGHGR
 	std::cout << RESET;
 }
 
-AForm::AForm( std::string const &name, int gradeSign, int gradeExec ) :
+Form::Form( std::string const &name, int gradeSign, int gradeExec ) :
 					_name(name), _gradeSign(gradeSign), _gradeExec(gradeExec)
 {
 	if (gradeSign < HIGHGRADE || gradeExec < HIGHGRADE)
@@ -39,22 +39,22 @@ AForm::AForm( std::string const &name, int gradeSign, int gradeExec ) :
 	std::cout << RESET;
 }
 
-AForm::AForm( AForm const &copy ) : _name(copy._name),
+Form::Form( Form const &copy ) : _name(copy._name),
 					_gradeSign(copy._gradeSign), _gradeExec(copy._gradeExec)
 {
 	*this = copy;
 	std::cout << "Copy constructor called" << std::endl;
 }
 
-AForm::~AForm( void )
+Form::~Form( void )
 {
 	std::cout << RED;
 	std::cout << "A form📋 has been destroyed!" << std::endl;
 	std::cout << RESET;
 }
 
-// Operators ==============================================================
-AForm& AForm::operator=( AForm const &other )
+// Operators ==================================================================
+Form& Form::operator=( Form const &other )
 {
 	if (this != &other)
 	{
@@ -64,7 +64,7 @@ AForm& AForm::operator=( AForm const &other )
 	return *this;
 }
 
-std::ostream &operator<<(std::ostream& out, AForm const &form)
+std::ostream &operator<<(std::ostream& out, Form const &form)
 {
 
 	out << GRAY << "The form📋 " << BLUE <<form.getName() << GRAY << " is ";
@@ -79,29 +79,29 @@ std::ostream &operator<<(std::ostream& out, AForm const &form)
 	return out;
 }
 
-// Getters ================================================================
-std::string AForm::getName( void ) const
+// Getters ====================================================================
+std::string Form::getName( void ) const
 {
 	return this->_name;
 }
 
-bool AForm::getSigned( void ) const
+bool Form::getSigned( void ) const
 {
 	return this->_signed;
 }
 
-int AForm::getGradeSign( void ) const
+int Form::getGradeSign( void ) const
 {
 	return this->_gradeSign;
 }
 
-int AForm::getGradeExec( void ) const
+int Form::getGradeExec( void ) const
 {
 	return this->_gradeExec;
 }
 
-// Methods ================================================================
-void AForm::beSigned( Bureaucrat &bureaucrat )
+// Methods ====================================================================
+void Form::beSigned( Bureaucrat &bureaucrat )
 {
 	if (this->_signed)
 	{
@@ -111,7 +111,7 @@ void AForm::beSigned( Bureaucrat &bureaucrat )
 		std::cout << RESET;
 	}
 	if (bureaucrat.getGrade() > this->_gradeSign)
-		throw AForm::GradeTooLowException();
+		throw Form::GradeTooLowException();
 	std::cout << GREEN << "The form📋 ";
 	std::cout << BLUE << this->_name << GREEN;
 	std::cout << " has been signed🖊️ !!\n\n";
@@ -119,31 +119,32 @@ void AForm::beSigned( Bureaucrat &bureaucrat )
 	this->_signed = true;
 }
 
-void AForm::execute(Bureaucrat const &executor) const
+void Form::execute(Bureaucrat const &executor) const
 	throw (FormNotSignedException, GradeTooLowException)
 {
 	if (!this->getSigned())
-		throw AForm::FormNotSignedException();
+		throw Form::FormNotSignedException();
 	if (executor.getGrade() > this->getGradeExec())
 	{
 		std::cout << RED;
-		throw AForm::GradeTooLowException();
+		throw Form::GradeTooLowException();
 		std::cout << RESET;
 	}
 }
 
-// Exceptions =============================================================
-const char *AForm::GradeTooHighException::what() const throw()
+// Exceptions =================================================================
+
+const char *Form::GradeTooHighException::what() const throw()
 {
-	return "Grade too high!!!\n";
+	return "Grade too high!!!";
 }
 
-const char *AForm::GradeTooLowException::what() const throw()
+const char *Form::GradeTooLowException::what() const throw()
 {
-	return "Grade too low!!!\n";
+	return "Grade too low!!!";
 }
 
-const char *AForm::FormNotSignedException::what() const throw()
+const char *Form::FormNotSignedException::what() const throw()
 {
 	return "The form has not yet been signed🖋️ !!!\n";
 }

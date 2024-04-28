@@ -14,13 +14,13 @@
 
 // Constructor & Destructor ===================================================
 RobotomyRequestForm::RobotomyRequestForm( std::string target )
-								: AForm("Robotomy Request", 72, 45)
+								: Form("robotomy request", 72, 45)
 {
 	this->_target = target;
 }
 
 RobotomyRequestForm::RobotomyRequestForm( RobotomyRequestForm const &copy )
-																: AForm(copy)
+																: Form(copy)
 {
 	*this = copy;
 }
@@ -43,7 +43,7 @@ RobotomyRequestForm& RobotomyRequestForm::operator=( RobotomyRequestForm const &
 void RobotomyRequestForm::execute(Bureaucrat const &executor) const
 	throw (FormNotSignedException, GradeTooLowException)
 {
-	AForm::execute(executor);
+	Form::execute(executor);
 	std::cout << PURPLE;
 	std::cout << "** drilling noises... **\n" << std::endl;
 	srand(time(0));

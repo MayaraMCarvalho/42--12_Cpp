@@ -13,7 +13,7 @@
 #include "AForm.hpp"
 
 // Constructor & Destructor ===================================================
-AForm::AForm( void ) : _name("Default"),_gradeSign(HIGHGRADE), _gradeExec(HIGHGRADE)
+AForm::AForm( void ) : _name("Default"), _gradeSign(HIGHGRADE), _gradeExec(HIGHGRADE)
 {
 	this->_signed = false;
 	std::cout << GREEN;
@@ -53,7 +53,7 @@ AForm::~AForm( void )
 	std::cout << RESET;
 }
 
-// Operators ==============================================================
+// Operators ==================================================================
 AForm& AForm::operator=( AForm const &other )
 {
 	if (this != &other)
@@ -79,7 +79,7 @@ std::ostream &operator<<(std::ostream& out, AForm const &form)
 	return out;
 }
 
-// Getters ================================================================
+// Getters ====================================================================
 std::string AForm::getName( void ) const
 {
 	return this->_name;
@@ -100,7 +100,7 @@ int AForm::getGradeExec( void ) const
 	return this->_gradeExec;
 }
 
-// Methods ================================================================
+// Methods ====================================================================
 void AForm::beSigned( Bureaucrat &bureaucrat )
 {
 	if (this->_signed)
@@ -132,7 +132,7 @@ void AForm::execute(Bureaucrat const &executor) const
 	}
 }
 
-// Exceptions =============================================================
+// Exceptions =================================================================
 const char *AForm::GradeTooHighException::what() const throw()
 {
 	return "Grade too high!!!\n";

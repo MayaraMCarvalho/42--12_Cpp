@@ -6,14 +6,15 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/04/26 15:22:39 by macarval         ###   ########.fr        #
+#    Updated: 2024/04/28 15:50:20 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= AForm
+NAME		= Intern
 
-SRCS		= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp \
-			RobotomyRequestForm.cpp  PresidentialPardonForm.cpp Tests.cpp
+SRCS		= main.cpp Bureaucrat.cpp Form.cpp ShrubberyCreationForm.cpp \
+			RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp \
+			Tests.cpp
 
 VPATH		= src/
 OBJS_PATH	= obj

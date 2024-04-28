@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 10:35:36 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/26 16:31:51 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/28 15:29:20 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -215,7 +215,10 @@ void Tests::robotomyTest( void ) const
 		std::cout << RED << std::endl;
 		std::cout << e.what() << RESET << std::endl;
 	}
+}
 
+void Tests::presidentialTest( void ) const
+{
 	std::cout << BLUE << std::endl;
 	std::cout << "---------------------------------------------------------\n";
 	std::cout << GRAY;
@@ -270,5 +273,148 @@ void Tests::robotomyTest( void ) const
 	{
 		std::cout << e.what() << std::endl;
 
+	}
+}
+
+void Tests::internTest( void ) const
+{
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << GRAY;
+	std::cout << "********************** INTERN TEST **********************\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << "Subject Test" << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << "Creation of bureaucrat 'Leila' with grade 26...\n";
+	std::cout << "---------------------------------------------------------\n";
+
+	try
+	{
+		Intern someRandomIntern;
+		Form* rrf;
+
+		rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+		std::cout << *rrf;
+
+		delete rrf;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+
+	}
+
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << "******************** BUREAUCRAT TEST ********************\n";
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << "ShrubberyCreationForm Test" << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << "Creation of bureaucrat 'Lucas' with grade 137...\n";
+	std::cout << "Creation of a Intern..." << std::endl;
+	std::cout << "Creation of a Form..." << std::endl;
+	std::cout << "The Intern creates a form type 'shrubbery creation' with\n";
+	std::cout << " target 'Amazon'..." << std::endl;
+	std::cout << "Lucas signs the form 'Amazon'..." << std::endl;
+	std::cout << "Lucas executes the form 'Amazon'..." << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	try
+	{
+		Bureaucrat bureaucrat("Lucas", 137);
+		std::cout << bureaucrat;
+		Intern intern;
+		Form *form;
+		form = intern.makeForm("shrubbery creation", "Amazon");
+		std::cout << *form;
+		bureaucrat.signForm(*form);
+		std::cout << *form;
+		bureaucrat.executeForm(*form);
+		delete form;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << "PresidentialPardonForm Test" << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << "Creation of bureaucrat 'Leila' with grade 2..." << std::endl;
+	std::cout << "Creation of a Intern..." << std::endl;
+	std::cout << "Creation of a Form..." << std::endl;
+	std::cout << "The Intern creates a form type 'presidential pardon' with\n";
+	std::cout << " target 'Billy'..." << std::endl;
+	std::cout << "Leila signs the form 'Billy'..." << std::endl;
+	std::cout << "Leila executes the form 'Billy'..." << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	try
+	{
+		Bureaucrat bureaucrat("Leila", 2);
+		std::cout << bureaucrat;
+		Intern intern;
+		Form *form;
+		form = intern.makeForm("presidential pardon", "Billy");
+		std::cout << *form;
+		bureaucrat.signForm(*form);
+		std::cout << *form;
+		bureaucrat.executeForm(*form);
+		delete form;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+
+	}
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << "RobotomyRequestForm Test" << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << "Creation of bureaucrat 'Thais' with grade 40...\n";
+	std::cout << "Creation of a Intern..." << std::endl;
+	std::cout << "Creation of a Form..." << std::endl;
+	std::cout << "The Intern creates a form type 'robotomy request' with\n";
+	std::cout << " target 'Bender'..." << std::endl;
+	std::cout << "Thais signs the form 'Bender'..." << std::endl;
+	std::cout << "Thais executes the form 'Bender'..." << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	try
+	{
+		Bureaucrat bureaucrat("Thais", 40);
+		std::cout << bureaucrat;
+		Intern intern;
+		Form *form;
+		form = intern.makeForm("robotomy request", "Bender");
+		std::cout << *form;
+		bureaucrat.signForm(*form);
+		std::cout << *form;
+		bureaucrat.executeForm(*form);
+		delete form;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << "Exception Test" << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << "Creation of a Intern..." << std::endl;
+	std::cout << "Creation of a Form..." << std::endl;
+	std::cout << "The Intern creates a form type 'default' with target\n";
+	std::cout << " 'default'..." << std::endl;
+	std::cout << "The Intern can't create the form, because the form type\n";
+	std::cout << " doesn't exist..." << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	try
+	{
+		Intern intern;
+		Form *form;
+		form = intern.makeForm("default", "default");
+		std::cout << *form;
+		delete form;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
 	}
 }

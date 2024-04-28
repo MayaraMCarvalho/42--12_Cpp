@@ -14,13 +14,13 @@
 
 // Constructor & Destructor ===================================================
 PresidentialPardonForm::PresidentialPardonForm( std::string target )
-								: AForm("Presidential Pardon", 25, 5)
+								: Form("presidential pardon", 25, 5)
 {
 	this->_target = target;
 }
 
 PresidentialPardonForm::PresidentialPardonForm( PresidentialPardonForm const &copy )
-																: AForm(copy)
+																: Form(copy)
 {
 	*this = copy;
 }
@@ -43,8 +43,8 @@ PresidentialPardonForm& PresidentialPardonForm::operator=( PresidentialPardonFor
 void PresidentialPardonForm::execute(Bureaucrat const &executor) const
 	throw (FormNotSignedException, GradeTooLowException)
 {
-	AForm::execute(executor);
-	 std::cout << BLUE << this->_target << " has been pardoned🤗";
-	 std::cout << " by Zafod Beeblebrox.\n";
-	 std::cout << RESET;
+	Form::execute(executor);
+	std::cout << BLUE << this->_target << " has been pardoned🤗";
+	std::cout << " by Zafod Beeblebrox.\n";
+	std::cout << RESET;
 }

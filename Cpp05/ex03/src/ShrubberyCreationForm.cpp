@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 15:03:26 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/25 17:14:27 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/28 15:52:10 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 // Constructor & Destructor ===================================================
 ShrubberyCreationForm::ShrubberyCreationForm( std::string target )
-								: AForm("Shrubbery Creation", 145, 137)
+								: Form("shrubbery creation", 145, 137)
 {
 	this->_target = target;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm( ShrubberyCreationForm const &copy )
-																: AForm(copy)
+																: Form(copy)
 {
 	*this = copy;
 }
@@ -86,6 +86,6 @@ static void	drawTrees(std::string fileName)
 void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 	throw (FormNotSignedException, GradeTooLowException)
 {
-	AForm::execute(executor);
+	Form::execute(executor);
 	drawTrees(_target + "_shrubbery");
 }

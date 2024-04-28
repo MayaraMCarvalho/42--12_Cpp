@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 19:07:34 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/26 15:22:10 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/28 15:23:30 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ int main ( void )
 	tests.bureaucratTest();
 	tests.shrubberyTest();
 	tests.robotomyTest();
+	tests.presidentialTest();
+	tests.internTest();
 
 	std::cout << BLUE << std::endl;
 	std::cout << "---------------------------------------------------------\n";
