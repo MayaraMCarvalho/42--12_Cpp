@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 09:39:23 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/30 09:51:21 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/30 16:42:59 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define SCALARCONVERTER_HPP
 
 # include <iostream>
+# include <limits.h>
+# include <cstdlib>
+# include <string>
+# include <cmath>
 
 // Color codes as global variables
 const std::string RESET = "\033[0m";
@@ -40,7 +44,7 @@ class ScalarConverter
 
 	public:
 	// Methods ===============================================================
-		static void convert(std::string str);
+		static void convert( std::string str );
 
 };
 
