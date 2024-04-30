@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/24 15:03:26 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/25 17:14:27 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/29 20:23:32 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 // Constructor & Destructor ===================================================
 ShrubberyCreationForm::ShrubberyCreationForm( std::string target )
-								: AForm("Shrubbery Creation", 145, 137)
+								: AForm("shrubbery creation", 145, 137)
 {
 	this->_target = target;
 }

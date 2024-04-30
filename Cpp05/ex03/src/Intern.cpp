@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/28 15:07:00 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/28 18:21:33 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/29 20:41:26 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 // Constructor & Destructor ===================================================
 Intern::Intern( void )
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << PURPLE;
+	std::cout << "A intern has been created!\n\n";
+	std::cout << RESET;
 }
 
 Intern::Intern( Intern const &copy )
@@ -26,7 +28,9 @@ Intern::Intern( Intern const &copy )
 
 Intern::~Intern( void )
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << RED;
+	std::cout << "A intern has been destroyed!" << std::endl;
+	std::cout << RESET;
 }
 
 // Operators ==================================================================
@@ -39,10 +43,8 @@ Intern& Intern::operator=( Intern const &other )
 	return *this;
 }
 
-// Getters ====================================================================
-
 // Methods ====================================================================
-Form* makeForm(std::string nameForm, std::string targetForm)
+Form* Intern::makeForm(std::string nameForm, std::string targetForm)
 {
 	std::string namesList[3] =
 			{"shrubbery creation", "robotomy request", "presidential pardon"};
@@ -51,7 +53,7 @@ Form* makeForm(std::string nameForm, std::string targetForm)
 		if (nameForm == namesList[i])
 		{
 			std::cout << GREEN;
-			std::cout << "Intern creates " << nameForm << "\n\n" << RESET;
+			std::cout << "Intern creates " << BLUE << nameForm << "\n\n" << RESET;
 			switch (i)
 			{
 			case 0:
@@ -63,6 +65,12 @@ Form* makeForm(std::string nameForm, std::string targetForm)
 			}
 		}
 	}
-	std::cout << RED << "Form not found\n" << RESET;
+	throw Intern::FormDoesNotExistException();
 	return NULL;
+}
+
+// Exceptions =================================================================
+const char *Intern::FormDoesNotExistException::what() const throw()
+{
+	return ("Form doesn't exist!❌");
 }

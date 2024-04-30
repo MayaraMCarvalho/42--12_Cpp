@@ -14,7 +14,7 @@
 
 // Constructor & Destructor ===================================================
 RobotomyRequestForm::RobotomyRequestForm( std::string target )
-								: AForm("Robotomy Request", 72, 45)
+								: AForm("robotomy request", 72, 45)
 {
 	this->_target = target;
 }

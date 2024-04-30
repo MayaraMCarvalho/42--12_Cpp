@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 10:35:36 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/28 15:29:20 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/29 21:04:41 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -245,6 +245,7 @@ void Tests::presidentialTest( void ) const
 	std::cout << "because his grade is too low..." << std::endl;
 	std::cout << "The bureaucrat 'Leila' increments his grade 20 times...\n";
 	std::cout << "The bureaucrat 'Leila' executes the form 'Billy'...\n";
+	std::cout << BLUE;
 	std::cout << "---------------------------------------------------------\n";
 	try
 	{
@@ -289,6 +290,7 @@ void Tests::internTest( void ) const
 	std::cout << "Subject Test" << std::endl;
 	std::cout << "---------------------------------------------------------\n";
 	std::cout << "Creation of bureaucrat 'Leila' with grade 26...\n";
+	std::cout << BLUE;
 	std::cout << "---------------------------------------------------------\n";
 
 	try
@@ -307,18 +309,23 @@ void Tests::internTest( void ) const
 
 	}
 
+	std::cout << BLUE << std::endl;
 	std::cout << "---------------------------------------------------------\n";
+	std::cout << GRAY;
 	std::cout << "******************** BUREAUCRAT TEST ********************\n";
+	std::cout << BLUE;
 	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
 	std::cout << "ShrubberyCreationForm Test" << std::endl;
 	std::cout << "---------------------------------------------------------\n";
 	std::cout << "Creation of bureaucrat 'Lucas' with grade 137...\n";
 	std::cout << "Creation of a Intern..." << std::endl;
 	std::cout << "Creation of a Form..." << std::endl;
 	std::cout << "The Intern creates a form type 'shrubbery creation' with\n";
-	std::cout << " target 'Amazon'..." << std::endl;
+	std::cout << "target 'Amazon'..." << std::endl;
 	std::cout << "Lucas signs the form 'Amazon'..." << std::endl;
 	std::cout << "Lucas executes the form 'Amazon'..." << std::endl;
+	std::cout << BLUE;
 	std::cout << "---------------------------------------------------------\n";
 	try
 	{
@@ -338,16 +345,19 @@ void Tests::internTest( void ) const
 		std::cout << e.what() << std::endl;
 	}
 
+	std::cout << BLUE << std::endl;
 	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
 	std::cout << "PresidentialPardonForm Test" << std::endl;
 	std::cout << "---------------------------------------------------------\n";
 	std::cout << "Creation of bureaucrat 'Leila' with grade 2..." << std::endl;
 	std::cout << "Creation of a Intern..." << std::endl;
 	std::cout << "Creation of a Form..." << std::endl;
 	std::cout << "The Intern creates a form type 'presidential pardon' with\n";
-	std::cout << " target 'Billy'..." << std::endl;
+	std::cout << "target 'Billy'..." << std::endl;
 	std::cout << "Leila signs the form 'Billy'..." << std::endl;
 	std::cout << "Leila executes the form 'Billy'..." << std::endl;
+	std::cout << BLUE;
 	std::cout << "---------------------------------------------------------\n";
 	try
 	{
@@ -367,16 +377,20 @@ void Tests::internTest( void ) const
 		std::cout << e.what() << std::endl;
 
 	}
+
+	std::cout << BLUE << std::endl;
 	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
 	std::cout << "RobotomyRequestForm Test" << std::endl;
 	std::cout << "---------------------------------------------------------\n";
 	std::cout << "Creation of bureaucrat 'Thais' with grade 40...\n";
 	std::cout << "Creation of a Intern..." << std::endl;
 	std::cout << "Creation of a Form..." << std::endl;
 	std::cout << "The Intern creates a form type 'robotomy request' with\n";
-	std::cout << " target 'Bender'..." << std::endl;
+	std::cout << "target 'Bender'..." << std::endl;
 	std::cout << "Thais signs the form 'Bender'..." << std::endl;
 	std::cout << "Thais executes the form 'Bender'..." << std::endl;
+	std::cout << BLUE;
 	std::cout << "---------------------------------------------------------\n";
 	try
 	{
@@ -395,15 +409,19 @@ void Tests::internTest( void ) const
 	{
 		std::cout << e.what() << std::endl;
 	}
+
+	std::cout << BLUE << std::endl;
 	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
 	std::cout << "Exception Test" << std::endl;
 	std::cout << "---------------------------------------------------------\n";
 	std::cout << "Creation of a Intern..." << std::endl;
 	std::cout << "Creation of a Form..." << std::endl;
 	std::cout << "The Intern creates a form type 'default' with target\n";
-	std::cout << " 'default'..." << std::endl;
+	std::cout << "'default'..." << std::endl;
 	std::cout << "The Intern can't create the form, because the form type\n";
-	std::cout << " doesn't exist..." << std::endl;
+	std::cout << "doesn't exist..." << std::endl;
+	std::cout << BLUE;
 	std::cout << "---------------------------------------------------------\n";
 	try
 	{
@@ -415,6 +433,8 @@ void Tests::internTest( void ) const
 	}
 	catch (std::exception &e)
 	{
+		std::cout << YELLOW;
 		std::cout << e.what() << std::endl;
+		std::cout << RESET;
 	}
 }

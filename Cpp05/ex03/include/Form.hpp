@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 10:22:12 by macarval          #+#    #+#             */
-/*   Updated: 2024/04/28 15:54:30 by macarval         ###   ########.fr       */
+/*   Updated: 2024/04/29 20:26:17 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ class Form
 		Form( void );
 		Form( std::string const &name, int gradeSign, int gradeExec );
 		Form( Form const &copy );
-		~Form( void );
+		virtual ~Form( void );
 
 	// Operators ==============================================================
 		Form& operator=( Form const &other );
