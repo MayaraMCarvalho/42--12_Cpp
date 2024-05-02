@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 09:39:23 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/01 21:36:37 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/02 15:22:20 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <cmath>
 # include <cctype>
 # include <cerrno>
+# include <iomanip>
+#include <cstdio>//
 
 // Color codes as global variables
 const std::string RESET = "\033[0m";
@@ -36,6 +38,8 @@ enum allTypes {
 	INT,
 	FLOAT,
 	DOUBLE,
+	PFLOAT,
+	PSEUDO,
 	INVALID
 };
 
@@ -44,29 +48,30 @@ typedef bool (*types)( const std::string str );
 class ScalarConverter
 {
 	private:
-	// =======================================================================
+	// ========================================================================
 		ScalarConverter( void );
 		ScalarConverter( ScalarConverter const &copy );
 		~ScalarConverter( void );
 
-	// Operators =============================================================
+	// Operators ==============================================================
 		ScalarConverter& operator=( ScalarConverter const &other );
 
-	// Methods ===============================================================
-		static bool			isChar( const std::string str );
-		static bool			isInt( const std::string str );
-		static bool			isFloat( const std::string str );
-		static bool			isDouble( const std::string str );
-		static int			getType( std::string str );
-		static void			fromChar( std::string str);
-		static void			fromInt( std::string str);
-		static void			fromFloat( std::string str);
-		static void			fromDouble( std::string str);
-		static std::string	checkImpossible(int i, float f, double d);
-		static void			printTypes( char c, int i, float f, double d );
+	// Methods ================================================================
+		static bool	isChar( const std::string str );
+		static bool	isInt( const std::string str );
+		static bool	isFloat( const std::string str );
+		static bool	isDouble( const std::string str );
+		static bool	isPseudo( const std::string str );
+		static int	getType( std::string str );
+		static void	fromChar( std::string str);
+		static void	fromInt( std::string str);
+		static void	fromFloat( std::string str);
+		static void	fromDouble( std::string str);
+		static void	fromPseudo( std::string str);
+		static void	printTypes( char c, int i, float f, double d, int error );
 
 	public:
-	// Methods ===============================================================
+	// Methods ================================================================
 		static void convert( std::string str );
 
 };

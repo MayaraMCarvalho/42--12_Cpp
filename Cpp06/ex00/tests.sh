@@ -6,7 +6,7 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/30 11:03:02 by macarval          #+#    #+#              #
-#    Updated: 2024/05/01 21:56:03 by macarval         ###   ########.fr        #
+#    Updated: 2024/05/02 15:47:47 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -127,7 +127,11 @@ echo -e "Char tests..."
 echo -e "---------------------------------------------------------------${reset}"
 
 # Test with char
-echo -e "${yellow}./convert 'A'${reset}"
+echo -e "${yellow}./convert 'c'${reset}"
+${PROGRAM} "c"
+echo -e "${yellow}\n./convert 'a'${reset}"
+${PROGRAM} "a"
+echo -e "${yellow}\n./convert 'A'${reset}"
 ${PROGRAM} "A"
 echo -e "${yellow}\n./convert 'l'${reset}"
 ${PROGRAM} "l"
@@ -157,6 +161,8 @@ echo -e "${yellow}\n./convert -1${reset}"
 ${PROGRAM} -1
 echo -e "${yellow}\n./convert 42${reset}"
 ${PROGRAM} 42
+echo -e "${yellow}\n./convert -42${reset}"
+${PROGRAM} -42
 echo -e "${yellow}\n./convert 65${reset}"
 ${PROGRAM} 65
 echo -e "${yellow}\n./convert 314${reset}"
@@ -173,12 +179,18 @@ echo -e "${yellow}\n./convert 1.1f${reset}"
 ${PROGRAM} 1.1f
 echo -e "${yellow}\n./convert -1.1f${reset}"
 ${PROGRAM} -1.1f
-echo -e "${yellow}\n./convert 42.42f${reset}"
-${PROGRAM} 42.42f
+echo -e "${yellow}\n./convert 42.2f${reset}"
+${PROGRAM} 42.2f
+echo -e "${yellow}\n./convert 4.2f${reset}"
+${PROGRAM} 4.2f
+echo -e "${yellow}\n./convert -4.2f${reset}"
+${PROGRAM} -4.2f
 echo -e "${yellow}\n./convert 65.56f${reset}"
 ${PROGRAM} 65.56f
 echo -e "${yellow}\n./convert 3.14f${reset}"
 ${PROGRAM} 3.14f
+echo -e "${yellow}\n./convert 42.0f${reset}"
+${PROGRAM} 42.0f
 
 echo -e "${blue}\n---------------------------------------------------------------"
 echo -e "Double tests..."
@@ -191,8 +203,12 @@ echo -e "${yellow}\n./convert 1.1${reset}"
 ${PROGRAM} 1.1
 echo -e "${yellow}\n./convert -1.1${reset}"
 ${PROGRAM} -1.1
-echo -e "${yellow}\n./convert 42.42${reset}"
-${PROGRAM} 42.42
+echo -e "${yellow}\n./convert 42.2${reset}"
+${PROGRAM} 42.2
+echo -e "${yellow}\n./convert 4.2${reset}"
+${PROGRAM} 4.2
+echo -e "${yellow}\n./convert -4.2${reset}"
+${PROGRAM} -4.2
 echo -e "${yellow}\n./convert 65.56${reset}"
 ${PROGRAM} 65.56
 echo -e "${yellow}\n./convert 3.14${reset}"

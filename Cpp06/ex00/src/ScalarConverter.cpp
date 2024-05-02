@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 09:38:58 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/01 22:10:57 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/02 15:44:05 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,15 +86,28 @@ bool ScalarConverter::isDouble( const std::string str )
 	return false;
 }
 
+bool ScalarConverter::isPseudo( const std::string str )
+{
+	std::string pseudos[6] = { "-inff", "+inff", "-inf", "+inf", "nan", "nanf" };
+
+	for (int i = 0; i < 6; ++i)
+	{
+		if (pseudos[i] == str)
+			return true;
+	}
+	return false;
+}
+
 int ScalarConverter::getType( std::string str )
 {
 	if (str.empty())
 		return INVALID;
-	types checkTypes[4] = { &ScalarConverter::isChar,
+	types checkTypes[5] = { &ScalarConverter::isChar,
 							&ScalarConverter::isInt,
 							&ScalarConverter::isFloat,
-							&ScalarConverter::isDouble };
-	for (int i = 0; i < 4; i++)
+							&ScalarConverter::isDouble,
+							&ScalarConverter::isPseudo };
+	for (int i = 0; i < 5; i++)
 	{
 		if (checkTypes[i](str))
 			return allTypes(i);
@@ -104,95 +117,123 @@ int ScalarConverter::getType( std::string str )
 
 void ScalarConverter::fromChar( std::string str )
 {
-	int c = static_cast<char>(str[0]);
+	int	c;
+	int	error = 0;
+
+	if (str.length() == 1 && str[0] >='0' && str[0] <= '9')
+		c = str[0] - 48;
+	else
+		c = static_cast<char>(str[0]);
 	int i = static_cast<int>(c);
 	float f = static_cast<float>(c);
 	double d = static_cast<double>(c);
 
 	if (str.length() == 1 && str[0] >='0' && str[0] <= '9')
-		c = 0;
-	printTypes(c, i, f, d);
+		c -= 49;
+	printTypes(c, i, f, d, error);
 }
 
 void ScalarConverter::fromInt( std::string str )
 {
-	char* ptr;
+	char*	ptr;
+	int		error = 0;
 
-	int i = static_cast<int>(std::strtol(str.c_str(), &ptr, 10));
+	long int l = std::strtol(str.c_str(), &ptr, 10);
+	int i = static_cast<int>(l);
 	char c = static_cast<char>(i);
 	float f = static_cast<float>(i);
 	double d = static_cast<double>(i);
 
-	printTypes(c, i, f, d);
+	if (l > INT_MAX || l < INT_MIN)
+		error = 2;
+
+	printTypes(c, i, f, d, error);
 }
 
 void ScalarConverter::fromFloat( std::string str )
 {
-	char* ptr;
+	char*	ptr;
+	int		error = 0;
 
 	float f = std::strtof(str.c_str(), &ptr);
 	char c = static_cast<char>(f);
 	int i = static_cast<int>(f);
 	double d = static_cast<double>(f);
 
-	printTypes(c, i, f, d);
+	if (f > INT_MAX || f < INT_MIN)
+		error = 1;
+
+	printTypes(c, i, f, d, error);
 }
 
 void ScalarConverter::fromDouble( std::string str )
 {
-	char* ptr;
+	char*	ptr;
+	int		error = 0;
 
 	double d = std::strtod(str.c_str(), &ptr);
 	char c = static_cast<char>(d);
 	int i = static_cast<int>(d);
 	float f = static_cast<float>(d);
 
-	printTypes(c, i, f, d);
+	if (d > INT_MAX || d < INT_MIN)
+		error = 1;
+	printTypes(c, i, f, d, error);
 }
 
-std::string ScalarConverter::checkImpossible(int i, float f, double d)
+void ScalarConverter::fromPseudo( std::string str )
 {
-	std::string	error = "";
-
-	if (i == INT_MAX || i == INT_MIN)
-		error += "i";
-	if (f == HUGE_VAL || f == -HUGE_VAL)
-		error += "f";
-	if (d == HUGE_VAL || d == -HUGE_VAL)
-		error += "d";
-	return error;
-}
-
-void ScalarConverter::printTypes( char c, int i, float f, double d )
-{
-	std::string	error = checkImpossible(i, f, d);
-
-	std::cout << BLUE << "🔤 char: ";
-	if (!isprint(c))
-		std::cout << RED << "Non displayable";
-	else
-		std::cout << c;
+	std::cout << BLUE << "🔤 char:   ";
+	std::cout << RED << "impossible";
 	std::cout << RESET << std::endl;
 
-	std::cout << GREEN << "🔢 int: ";
-	if (error.find('i') != std::string::npos)
-		std::cout << RED << "Impossible";
+	std::cout << GREEN << "🔢 int:    ";
+	std::cout << RED << "impossible";
+	std::cout << RESET << std::endl;
+
+	std::cout << CYAN << "🫧  float:  ";
+	std::cout << str;
+	if (str == "nan" || str == "+inf" || str == "-inf")
+		std::cout << "f";
+	std::cout << RESET << std::endl;
+
+	std::cout << PURPLE << "💲 double: ";
+	if (str == "nanf" || str == "+inff" || str == "-inff")
+		str.erase(str.length() - 1);
+	std::cout << str;
+	std::cout << RESET << std::endl;
+}
+
+void ScalarConverter::printTypes( char c, int i, float f, double d, int error )
+{
+	std::cout << BLUE << "🔤 char:   ";
+	if (i < CHAR_MIN || i > CHAR_MAX)
+		std::cout << RED << "impossible";
+	else if (!isprint(c))
+		std::cout << RED << "Non displayable";
+	else
+		std::cout << "'" << c << "'";
+	std::cout << RESET << std::endl;
+
+	std::cout << GREEN << "🔢 int:    ";
+	if (error)
+		std::cout << RED << "impossible";
 	else
 		std::cout << i;
 	std::cout << RESET << std::endl;
 
-	std::cout << CYAN << "🫧  float: ";
-	if (error.find('f') != std::string::npos)
-		std::cout << RED << "Impossible";
+	std::cout << CYAN << "🫧  float:  ";
+	if (error == 2)
+		std::cout << RED << "impossible";
 	else
-		std::cout << f;
+		std::cout << std::fixed << std::setprecision(1) << f << "f";
 	std::cout << RESET << std::endl;
 
 	std::cout << PURPLE << "💲 double: ";
-	if (error.find('d') != std::string::npos)
-		std::cout << RED << "Impossible";
+	if (error == 2)
+		std::cout << RED << "impossible";
 	else
-		std::cout << d;
+		std::cout << std::fixed << std::setprecision(1) << d;
 	std::cout << RESET << std::endl;
 }
 
@@ -202,15 +243,16 @@ void ScalarConverter::convert( std::string str )
 
 	type = getType(str);
 
-	void (* functions[4])(std::string) = {
+	void (* functions[5])(std::string) = {
 							&fromChar,
 							&fromInt,
 							&fromFloat,
-							&fromDouble };
+							&fromDouble,
+							&fromPseudo };
 
-	if (type < 4)
+	if (type < 5)
 		(*functions[type])(str);
 	else
-		std::cout << RED << "Invalid type!!!" << RESET << std::endl;
+		std::cout << RED << "Error: invalid parameter!!!" << RESET << std::endl;
 
 }
