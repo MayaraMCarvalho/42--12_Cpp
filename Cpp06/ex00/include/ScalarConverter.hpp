@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 09:39:23 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/02 15:22:20 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/02 16:10:33 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # include <cctype>
 # include <cerrno>
 # include <iomanip>
-#include <cstdio>//
 
 // Color codes as global variables
 const std::string RESET = "\033[0m";
