@@ -6,7 +6,7 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/30 11:03:02 by macarval          #+#    #+#              #
-#    Updated: 2024/04/30 11:18:57 by macarval         ###   ########.fr        #
+#    Updated: 2024/05/01 21:56:03 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,7 @@ echo -e "${yellow}\n./convert '\\a'${reset}"
 ${PROGRAM} "'\a'"
 echo -e "${yellow}\n./convert '\\e'${reset}"
 ${PROGRAM} "'\e'"
-echo -e ${reset}"n${PROGRAM} '\\0'${reset}"
+echo -e "${yellow}\n./convert '\\0'${reset}"
 ${PROGRAM} "'\0'"
 echo -e "${yellow}\n./convert '\\x0'${reset}"
 ${PROGRAM} "'\x0'"
