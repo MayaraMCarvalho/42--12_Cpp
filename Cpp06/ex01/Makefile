@@ -6,11 +6,11 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/05/02 20:43:11 by macarval         ###   ########.fr        #
+#    Updated: 2024/05/02 22:04:27 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		= Serializer
+NAME		= serializer
 
 SRCS		= main.cpp Serializer.cpp Data.cpp
 
