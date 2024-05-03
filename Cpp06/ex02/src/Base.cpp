@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 22:09:17 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/02 23:09:41 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/02 23:34:39 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,21 +56,21 @@ void	identify(Base& p)
 {
 	try
 	{
-		dynamic_cast<A&>(p);
+		A a = dynamic_cast<A&>(p);
 		std::cout << "It's an 🅐 class" << std::endl;
 		return ;
 	}
 	catch (std::exception &e) {}
 	try
 	{
-		dynamic_cast<B&>(p);
+		B b = dynamic_cast<B&>(p);
 		std::cout << "It's an 🅑 class" << std::endl;
 		return ;
 	}
 	catch (std::exception &e) {}
 	try
 	{
-		dynamic_cast<C&>(p);
+		C c = dynamic_cast<C&>(p);
 		std::cout << "It's an 🅒 class" << std::endl;
 		return ;
 	}
