@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 09:38:58 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/02 16:14:04 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/02 23:26:28 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,7 +161,7 @@ void ScalarConverter::fromFloat( std::string str )
 	int i = static_cast<int>(f);
 	double d = static_cast<double>(f);
 
-	if (f > INT_MAX || f < INT_MIN)
+	if (f > static_cast<float>(INT_MAX) || f < static_cast<float>(INT_MIN))
 		error = 1;
 
 	printTypes(c, i, f, d, error);
