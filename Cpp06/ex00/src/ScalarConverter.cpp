@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 09:38:58 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/02 15:55:50 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/02 16:14:04 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ void ScalarConverter::fromChar( std::string str )
 
 	if (str.length() == 1 && str[0] >='0' && str[0] <= '9')
 		c -= 49;
-		
+
 	printTypes(c, i, f, d, error);
 }
 
@@ -255,5 +255,4 @@ void ScalarConverter::convert( std::string str )
 		(*functions[type])(str);
 	else
 		std::cout << RED << "Error: invalid parameter!!!" << RESET << std::endl;
-
 }
