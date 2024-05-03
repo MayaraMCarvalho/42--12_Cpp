@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 20:42:31 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/02 21:26:54 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/03 08:39:51 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ Data& Data::operator=( Data const &other )
 {
 	if (this != &other)
 	{
+		this->_index = other._index;
+		this->_name = other._name;
 	}
 	std::cout << "Copy assignment operator called" << std::endl;
 	return *this;

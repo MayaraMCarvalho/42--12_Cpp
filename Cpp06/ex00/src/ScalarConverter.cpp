@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/30 09:38:58 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/02 23:26:28 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/03 08:35:05 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ ScalarConverter& ScalarConverter::operator=( ScalarConverter const &other )
 {
 	if (this != &other)
 	{
+		*this = other;
 	}
 	std::cout << "Copy assignment operator called" << std::endl;
 	return *this;

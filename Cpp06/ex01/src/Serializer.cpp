@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 16:14:24 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/02 20:56:41 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/03 08:37:58 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ Serializer& Serializer::operator=( Serializer const &other )
 {
 	if (this != &other)
 	{
+		*this = other;
 	}
 	std::cout << "Copy assignment operator called" << std::endl;
 	return *this;
