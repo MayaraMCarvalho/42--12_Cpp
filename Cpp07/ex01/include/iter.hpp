@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 11:16:10 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/04 15:26:22 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/04 15:27:56 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void iter(T *arr, size_t size, void (*func)(T const &))
 }
 
 template <typename T>
-void up(T const &a) {
+void colors(T const &a) {
 	std::string color[] = { RED,
 							GREEN,
 							YELLOW,

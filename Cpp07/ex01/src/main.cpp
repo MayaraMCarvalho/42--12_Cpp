@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/04 11:15:48 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/04 15:15:55 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/04 15:28:10 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int main( void )
 	{
 		int arr[] = {1, 2, 3, 4, 5};
 		size_t	size = sizeof(arr) / sizeof(arr[0]);
-		
-		::iter(arr, size, &up<int>);
+
+		::iter(arr, size, &colors<int>);
 	}
 
 
@@ -43,8 +43,8 @@ int main( void )
 	{
 		std::string arr[] = {"one", "two", "three", "four", "five"};
 		size_t	size = sizeof(arr) / sizeof(arr[0]);
-		
-		::iter(arr, size, &up<std::string>);
+
+		::iter(arr, size, &colors<std::string>);
 	}
 
 	std::cout << BLUE << std::endl;
@@ -57,8 +57,8 @@ int main( void )
 	{
 		float arr[] = {1.1f, 2.2f, 3.3f, 4.4f, 5.5f};
 		size_t	size = sizeof(arr) / sizeof(arr[0]);
-		
-		::iter(arr, size, &up<float>);
+
+		::iter(arr, size, &colors<float>);
 	}
 
 	std::cout << BLUE << std::endl;
@@ -71,8 +71,8 @@ int main( void )
 	{
 		double arr[] = {1.11, 2.22, 3.33, 4.44, 5.55};
 		size_t	size = sizeof(arr) / sizeof(arr[0]);
-		
-		::iter(arr, size, &up<double>);
+
+		::iter(arr, size, &colors<double>);
 	}
 
 	std::cout << BLUE << std::endl;
@@ -85,8 +85,8 @@ int main( void )
 	{
 		char arr[] = {'a', 'b', 'c', 'd', 'e'};
 		size_t	size = sizeof(arr) / sizeof(arr[0]);
-		
-		::iter(arr, size, &up<char>);
+
+		::iter(arr, size, &colors<char>);
 	}
 
 	std::cout << BLUE << std::endl;
