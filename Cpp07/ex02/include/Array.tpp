@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 18:09:28 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/06 19:39:57 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/07 11:28:39 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,14 @@
 
 // Constructor & Destructor ===================================================
 template <typename T>
-Array<T>::Array( void ) : _size(0), _arr(NULL) {}
+Array<T>::Array( void ) : _size(0), _arr(new T[0]) {}
 
 template <typename T>
-Array<T>::Array( unsigned int size ) : _size(size), _arr(new T[size]) {}
+Array<T>::Array( unsigned int size ) : _size(size), _arr(new T[size])
+{
+	for (unsigned int i = 0; i < _size; ++i)
+		_arr[i] = T();
+}
 
 template <typename T>
 Array<T>::Array( Array const &copy ):  _size(copy._size), _arr(new T[copy._size])

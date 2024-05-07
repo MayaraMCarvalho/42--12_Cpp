@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 18:08:53 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/06 19:50:26 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/07 11:29:15 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,21 @@ int main( void )
 	std::cout << BLUE;
 	std::cout << "---------------------------------------------------------\n";
 	std::cout << CYAN;
+	std::cout << "********************* STARTUP TEST **********************\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << YELLOW;
+
+	{
+		Array<int> intArray(5);
+
+		for (unsigned int i = 0; i < intArray.size(); i++)
+			std::cout << "[" << i << "]: " << intArray[i] << std::endl;
+	}
+
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
 	std::cout << "*********************** INT TEST ************************\n";
 	std::cout << BLUE;
 	std::cout << "---------------------------------------------------------\n";
@@ -30,10 +45,10 @@ int main( void )
 		Array<int> intArray(5);
 
 		for (unsigned int i = 0; i < intArray.size(); i++)
-				intArray[i] = static_cast<int>(i);
+			intArray[i] = static_cast<int>(i);
 
 		for (unsigned int i = 0; i < intArray.size(); i++)
-				std::cout << intArray[i] << std::endl;
+			std::cout << intArray[i] << std::endl;
 	}
 
 
@@ -92,7 +107,7 @@ int main( void )
 			doubleArray[i] = static_cast<double>(i + 0.42);
 
 		for (unsigned int i = 0; i < doubleArray.size(); i++)
-				std::cout << doubleArray[i] << std::endl;
+			std::cout << doubleArray[i] << std::endl;
 
 	}
 
@@ -108,10 +123,10 @@ int main( void )
 		Array<char> charArray(5);
 
 		for (unsigned int i = 0; i < charArray.size(); i++)
-				charArray[i] = static_cast<char>(i + 65);
+			charArray[i] = static_cast<char>(i + 65);
 
 		for (unsigned int i = 0; i < charArray.size(); i++)
-				std::cout << charArray[i] << std::endl;
+			std::cout << charArray[i] << std::endl;
 
 
 	}
@@ -128,13 +143,13 @@ int main( void )
 		Array<int> intArray(5);
 
 		for (unsigned int i = 0; i < intArray.size(); i++)
-				intArray[i] = static_cast<int>(i);
+			intArray[i] = static_cast<int>(i);
 
 		Array<int> intArrayCopy(intArray);
 		intArrayCopy[0] = 42;
 
 		for (unsigned int i = 0; i < intArrayCopy.size(); i++)
-				std::cout << intArray[i] << " - " << intArrayCopy[i] << std::endl;
+			std::cout << intArray[i] << " - " << intArrayCopy[i] << std::endl;
 	}
 
 	std::cout << BLUE << std::endl;
@@ -149,19 +164,23 @@ int main( void )
 		Array<char> charArray(5);
 
 		for (unsigned int i = 0; i < charArray.size(); i++)
-				charArray[i] = static_cast<char>(i + 65);
+			charArray[i] = static_cast<char>(i + 65);
 
 		Array<char> charArrayAssign = charArray;
 		charArrayAssign[0] = 'Z';
 
 		for (unsigned int i = 0; i < charArrayAssign.size(); i++)
-				std::cout << charArray[i] << " - " << charArrayAssign[i] << std::endl;
+			std::cout << charArray[i] << " - " << charArrayAssign[i] << std::endl;
 	}
 
 	std::cout << BLUE << std::endl;
 	std::cout << "---------------------------------------------------------\n";
 	std::cout << CYAN;
 	std::cout << "****************** OUT OF BOUNDS TEST *******************\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "Outside the upper limit..." << std::endl;
 	std::cout << BLUE;
 	std::cout << "---------------------------------------------------------\n";
 	std::cout << YELLOW;
@@ -171,6 +190,33 @@ int main( void )
 		{
 			Array<float> floatArray(5);
 			floatArray[10] = 42.42;
+		}
+		catch(const std::exception& e)
+		{
+			std::cout << RED;
+			std::cerr << e.what() << std::endl;
+			std::cout << RESET;
+		}
+	}
+
+	std::cout << BLUE << std::endl;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "****************** OUT OF BOUNDS TEST *******************\n";
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << CYAN;
+	std::cout << "Outside the lower limit..." << std::endl;
+	std::cout << BLUE;
+	std::cout << "---------------------------------------------------------\n";
+	std::cout << YELLOW;
+
+	{
+		 try
+		{
+			Array<float> floatArray(5);
+			floatArray[-5] = 42.42;
 		}
 		catch(const std::exception& e)
 		{
