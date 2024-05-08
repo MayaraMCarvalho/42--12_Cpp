@@ -6,7 +6,7 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/05/08 16:29:56 by macarval         ###   ########.fr        #
+#    Updated: 2024/05/08 16:30:36 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,10 +70,10 @@ git:
 			clear
 			git add .
 			git status
-			@echo " $(GREEN)Enter cpp list:"
+			@echo "$(GREEN)Enter cpp list:"
 			@read list; \
 			echo -n "\n"; \
-			echo " $(YELLOW)Enter the exercise:"; \
+			echo "$(YELLOW)Enter the exercise:"; \
 			read ex; \
 			echo -n "\n"; \
 			echo " $(MAGENTA)Choose status:"; \
@@ -89,7 +89,7 @@ git:
 						4) status="Correction" ;; \
 						*) echo "Escolha inválida"; exit 1 ;; \
 			esac; \
-			echo " $(BLUE)"; \
+			echo "$(BLUE)"; \
 			git commit -m "[Cpp$$list]: ex$$ex $$status!"
 			git push
 
