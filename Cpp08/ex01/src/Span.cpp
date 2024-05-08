@@ -6,31 +6,37 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:45:32 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/08 16:45:35 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/08 16:49:30 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Class.hpp"
+#include "Span.hpp"
 
 // Constructor & Destructor ===================================================
-Class::Class( void )
+Span::Span( void )
 {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-Class::Class( Class const &copy )
+Span::Span( int N ) : _N(N)
+{
+	std::cout << "Default constructor called" << std::endl;
+}
+
+
+Span::Span( Span const &copy )
 {
 	*this = copy;
 	std::cout << "Copy constructor called" << std::endl;
 }
 
-Class::~Class( void )
+Span::~Span( void )
 {
 	std::cout << "Destructor called" << std::endl;
 }
 
 // Operators ==================================================================
-Class& Class::operator=( Class const &other )
+Span& Span::operator=( Span const &other )
 {
 	if (this != &other)
 	{

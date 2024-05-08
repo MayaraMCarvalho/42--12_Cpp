@@ -6,12 +6,12 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:45:17 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/08 16:45:20 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/08 16:51:41 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLASS_HPP
-# define CLASS_HPP
+#ifndef SPAN_HPP
+# define SPAN_HPP
 
 # include <iostream>
 
@@ -25,20 +25,23 @@ const std::string PURPLE = "\033[35;1m";
 const std::string CYAN = "\033[36;1m";
 const std::string GRAY = "\033[37;1m";
 
-class Class
+class Span
 {
 	private:
+		size_t	_N;
+		
 
 	public:
 	// Exceptions =============================================================
 
 	// ========================================================================
-		Class( void );
-		Class( Class const &copy );
-		~Class( void );
+		Span( void );
+		Span( int N );
+		Span( Span const &copy );
+		~Span( void );
 
 	// Operators ==============================================================
-		Class& operator=( Class const &other );
+		Span& operator=( Span const &other );
 
 	// Getters ================================================================
 

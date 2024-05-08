@@ -6,13 +6,13 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/05/08 16:44:46 by macarval         ###   ########.fr        #
+#    Updated: 2024/05/08 17:51:45 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=
+NAME		= span
 
-SRCS		= main.cpp
+SRCS		= main.cpp Span.cpp
 
 VPATH		= src/
 OBJS_PATH	= obj
@@ -91,7 +91,7 @@ git:
 						*) echo "Escolha inválida"; exit 1 ;; \
 			esac; \
 			echo "$(BLUE)"; \
-			git commit -m "[Cpp$$list]: ex$$ex $$status!"
+			git commit -m "[Cpp$$list]: ex$$ex $$status"
 			git push
 
 .PHONY:		all re clean fclean comp val git

@@ -6,9 +6,11 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:45:42 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/08 16:46:25 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/08 16:48:10 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Span.hpp"
 
 int main( void )
 {
