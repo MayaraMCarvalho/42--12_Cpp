@@ -6,7 +6,7 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/05/08 16:30:36 by macarval         ###   ########.fr        #
+#    Updated: 2024/05/08 16:33:52 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,6 +68,7 @@ val:
 
 git:
 			clear
+			@make fclean
 			git add .
 			git status
 			@echo "$(GREEN)Enter cpp list:"
