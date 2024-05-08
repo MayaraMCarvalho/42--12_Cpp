@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Array.hpp                                          :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/06 17:53:21 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/08 09:43:21 by macarval         ###   ########.fr       */
+/*   Created: 2024/05/08 09:44:17 by macarval          #+#    #+#             */
+/*   Updated: 2024/05/08 15:59:25 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_HPP
-# define ARRAY_HPP
+#ifndef EASYFIND_HPP
+# define EASYFIND_HPP
 
 # include <iostream>
-# include <sstream>
+# include <vector>
+# include <list>
+# include <deque>
+# include <algorithm>
 
 // Color codes as global variables
 const std::string RESET = "\033[0m";
@@ -27,34 +30,15 @@ const std::string CYAN = "\033[36;1m";
 const std::string GRAY = "\033[37;1m";
 
 template <typename T>
-class Array
+typename T::iterator easyfind(T &first, int second)
 {
-	private:
-		unsigned int	_size;
-		T				*_arr;
+	typename T::iterator it;
 
-	public:
-	// Exceptions =============================================================
-	class IndexLimitsException : public std::exception
-		{
-			public:
-				virtual const char* what() const throw();
-		};
+	it = std::find(first.begin(), first.end(), second);
 
-	// ========================================================================
-		Array( void );
-		Array(unsigned int size);
-		Array( Array const &copy );
-		~Array( void );
-
-	// Operators ==============================================================
-		Array& operator=( Array const &other );
-		T& operator[]( unsigned int const index ) const;
-
-	// Getters ================================================================
-		unsigned int size() const;
-};
-
-# include "Array.tpp"
+	if (it == first.end())
+		throw std::exception();
+	return it;
+}
 
 #endif

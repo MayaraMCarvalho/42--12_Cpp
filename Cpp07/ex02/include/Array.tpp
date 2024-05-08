@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 18:09:28 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/07 11:28:39 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/08 09:43:07 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,16 +66,11 @@ unsigned int Array<T>::size( void ) const
 	return this->_size;
 }
 
-// Setters ====================================================================
-
-// Methods ====================================================================
-
 // Exceptions =================================================================
 template <typename T>
 const char *Array<T>::IndexLimitsException::what() const throw()
 {
 	return "Error: Index out of bounds!!!";
 }
-
 
 #endif
