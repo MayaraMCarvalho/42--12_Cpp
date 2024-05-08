@@ -6,7 +6,7 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/05/08 16:21:00 by macarval         ###   ########.fr        #
+#    Updated: 2024/05/08 16:28:22 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,11 +69,13 @@ val:
 git:
 			git add .
 			git status
-			@echo "Enter cpp list:"
+			@echo " $(GREEN)Enter cpp list:"
 			@read list; \
-			echo "Enter the exercise:"; \
+			echo -n "\n"; \
+			echo " $(YELLOW)Enter the exercise:"; \
 			read ex; \
-			echo "Choose status:"; \
+			echo -n "\n"; \
+			echo " $(MAGENTA)Choose status:"; \
 			echo "1. Init."; \
 			echo "2. In Progress..."; \
 			echo "3. Done!!"; \
@@ -86,7 +88,9 @@ git:
 						4) status="Correction" ;; \
 						*) echo "Escolha inválida"; exit 1 ;; \
 			esac; \
-			git commit -m "[Cpp$$list]: ex$$ex $$status!"
+			echo -n "\n"; \
+			git commit -m " $(BLUE)[Cpp$$list]: ex$$ex $$status!"
+			echo -n "\n"; \
 			git push
 
 .PHONY:		all re clean fclean comp val git
