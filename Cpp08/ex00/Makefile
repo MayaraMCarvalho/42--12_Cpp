@@ -6,7 +6,7 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/05/08 16:28:22 by macarval         ###   ########.fr        #
+#    Updated: 2024/05/08 16:29:27 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,6 +67,7 @@ val:
 			@valgrind ./$(NAME)
 
 git:
+			clear
 			git add .
 			git status
 			@echo " $(GREEN)Enter cpp list:"
@@ -88,8 +89,8 @@ git:
 						4) status="Correction" ;; \
 						*) echo "Escolha inválida"; exit 1 ;; \
 			esac; \
-			echo -n "\n"; \
-			git commit -m " $(BLUE)[Cpp$$list]: ex$$ex $$status!"
+			echo " $(BLUE)"; \
+			git commit -m "[Cpp$$list]: ex$$ex $$status!"
 			echo -n "\n"; \
 			git push
 
