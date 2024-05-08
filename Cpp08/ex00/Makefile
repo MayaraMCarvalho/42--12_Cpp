@@ -6,7 +6,7 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/05/08 16:29:27 by macarval         ###   ########.fr        #
+#    Updated: 2024/05/08 16:29:56 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,7 +91,6 @@ git:
 			esac; \
 			echo " $(BLUE)"; \
 			git commit -m "[Cpp$$list]: ex$$ex $$status!"
-			echo -n "\n"; \
 			git push
 
 .PHONY:		all re clean fclean comp val git
