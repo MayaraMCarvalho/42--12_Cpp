@@ -6,7 +6,7 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/05/08 16:34:39 by macarval         ###   ########.fr        #
+#    Updated: 2024/05/08 16:44:46 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -77,7 +77,7 @@ git:
 			echo "$(YELLOW)Enter the exercise:"; \
 			read ex; \
 			echo -n "\n"; \
-			echo " $(MAGENTA)Choose status:"; \
+			echo "$(MAGENTA)Choose status:"; \
 			echo "1. Init."; \
 			echo "2. In Progress..."; \
 			echo "3. Done!!"; \
