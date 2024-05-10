@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/06 17:53:21 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/08 09:43:21 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/10 10:35:35 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ class Array
 
 	public:
 	// Exceptions =============================================================
-	class IndexLimitsException : public std::exception
+		class IndexLimitsException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();
