@@ -6,11 +6,11 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/05/08 16:44:46 by macarval         ###   ########.fr        #
+#    Updated: 2024/05/09 16:51:56 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=
+NAME		= mutant
 
 SRCS		= main.cpp
 
