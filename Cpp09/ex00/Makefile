@@ -6,13 +6,13 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/05/08 16:44:46 by macarval         ###   ########.fr        #
+#    Updated: 2024/05/09 21:18:14 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME		=
+NAME		= btc
 
-SRCS		= main.cpp
+SRCS		= main.cpp BitcoinExchange.cpp
 
 VPATH		= src/
 OBJS_PATH	= obj
