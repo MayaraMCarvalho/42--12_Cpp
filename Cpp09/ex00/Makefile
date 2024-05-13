@@ -6,7 +6,7 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/05/09 21:18:14 by macarval         ###   ########.fr        #
+#    Updated: 2024/05/13 11:37:40 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,7 +91,7 @@ git:
 						*) echo "Escolha inválida"; exit 1 ;; \
 			esac; \
 			echo "$(BLUE)"; \
-			git commit -m "[Cpp$$list]: ex$$ex $$status!"
+			git commit -m "[Cpp$$list]: ex$$ex $$status"
 			git push
 
 .PHONY:		all re clean fclean comp val git
