@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 21:18:20 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/10 21:29:37 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/13 10:59:41 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,22 +43,22 @@ class BitcoinExchange
 		BitcoinExchange& operator=( BitcoinExchange const &other );
 
 	// Methods ================================================================
+		void	_getDataBase( void );
+		void	_extractDataBase( std::ifstream& file );
 		void	_getInputData( std::ifstream& file );
 		void	_trim( std::string& str );
 		void	_verifyHeader( std::string& header, int type );
 		void	_verifyLine( std::string& line, std::string& date,
 								float& value, int type );
-		float	_getValue( std::string &str );
+		float	_getValue( std::string &str, std::string &line );
 		bool	_verifyDate( std::string& date );
 		bool	_verifyDateFormat( std::string& date );
 		void	_getDate( std::string& date, int& year, int &month, int& day );
 		bool	_verifyYear( int& year );
 		bool	_verifyMonth( int& month );
 		bool	_verifyDay( int& day, int& month, int& year );
-		bool	_verifyValueRange( float& value );
-
-
-
+		void	_verifyValueRange( float& value, std::string &line );
+		float	_getRates( std::string date );
 
 
 	public:
@@ -67,6 +67,17 @@ class BitcoinExchange
 		~BitcoinExchange( void );
 
 	// Exceptions =============================================================
+		class DataBaseFileNotOpenException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class DataBaseFileEmptyException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
 		class InputFileNotOpenException : public std::exception
 		{
 			public:
@@ -74,6 +85,12 @@ class BitcoinExchange
 		};
 
 		class InputFileEmptyException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class InvalidDataBaseException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();
@@ -98,6 +115,24 @@ class BitcoinExchange
 		};
 
 		class BadValueException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class UnderValueException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class AboveValueException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class DateNotFoundException : public std::exception
 		{
 			public:
 				virtual const char* what() const throw();

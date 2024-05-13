@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    test_script.sh                                     :+:      :+:    :+:    #
+#    tests.sh                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/30 11:03:02 by macarval          #+#    #+#              #
-#    Updated: 2024/05/10 18:16:27 by macarval         ###   ########.fr        #
+#    Updated: 2024/05/13 10:27:07 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ ${PROGRAM} "files/empty.txt"
 echo -e "${yellow}\n${PROGRAM} files/header1.txt${reset}"
 ${PROGRAM} "files/header1.txt"
 
-echo -e "${yellow}\n${PROGRAM} files/header1.txt${reset}"
+echo -e "${yellow}\n${PROGRAM} files/header2.txt${reset}"
 ${PROGRAM} "files/header2.txt"
 
 echo -e "${blue}---------------------------------------------------------------"
@@ -62,8 +62,8 @@ echo -e "Valid input tests..."
 echo -e "---------------------------------------------------------------${reset}"
 
 # Test with invalid inputs
-echo -e "${yellow}${PROGRAM} files/input.txt ${reset}"
-${PROGRAM} "files/input.txt"
+echo -e "${yellow}${PROGRAM} input.txt ${reset}"
+${PROGRAM} "input.txt"
 
 echo -e "${blue}\n---------------------------------------------------------------"
 echo -e "Tests finished..."
