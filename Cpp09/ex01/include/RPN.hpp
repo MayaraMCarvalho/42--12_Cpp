@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 11:42:48 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/13 12:06:37 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/14 17:08:31 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ const std::string GRAY = "\033[37;1m";
 class RPN
 {
 	private:
-		std::stack<int> numbers;
+		std::stack<int> _numbers;
 
 	public:
 	// Constructor & Destructor ===============================================
@@ -48,7 +48,7 @@ class RPN
 	// Setters ================================================================
 
 	// Methods ================================================================
-	void	run( char const *argv[] );
+	void	run( std::string argv );
 };
 
 #endif

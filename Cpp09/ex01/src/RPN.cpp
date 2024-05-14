@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 11:44:20 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/13 12:06:25 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/14 17:21:16 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,16 @@ RPN& RPN::operator=( RPN const &other )
 // Setters ====================================================================
 
 // Methods ====================================================================
-void RPN::run( char const *argv[] )
+void RPN::run( std::string argv )
 {
-	for (int i = 1; argv[i]; ++i)
-		std::cout << argv[i] << std::endl;
+	for (size_t i = 0; i < argv.length(); ++i)
+	{
+		while (argv[i] == ' ')
+			++i;
+		if (std::isdigit(argv[i]) && argv[i + 1] && std::isdigit(argv[i + 1]))
+			std::cout << "Error" << std::endl;
+	}
+	std::cout << std::endl;
 }
 
 // Exceptions =================================================================

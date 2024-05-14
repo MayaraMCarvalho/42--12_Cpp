@@ -6,7 +6,7 @@
 #    By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 16:33:22 by macarval          #+#    #+#              #
-#    Updated: 2024/05/13 12:06:48 by macarval         ###   ########.fr        #
+#    Updated: 2024/05/14 15:59:42 by macarval         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,7 +46,7 @@ $(OBJS_PATH)/%.o: %.cpp
 			@echo -n "\n"
 
 clean:
-			@rm -rf $(OBJS_PATH)
+			@rm -rf $(OBJS_PATH) Test
 			@echo "$(CYAN)$(NAME): $(GREEN)Clean done!$(RESET)"
 
 fclean:		clean
@@ -65,6 +65,11 @@ val:
 			clear
 			@make -s re
 			@valgrind ./$(NAME)
+
+test:		$(NAME)
+			clear
+			@make -s re
+			@./tests.sh --no-print-directory
 
 git:
 			clear
@@ -94,4 +99,4 @@ git:
 			git commit -m "[Cpp$$list]: ex$$ex $$status"
 			git push
 
-.PHONY:		all re clean fclean comp val git
+.PHONY:		all re clean fclean comp val git test
