@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:45:32 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/09 15:33:48 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:29:40 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ int Span::longestSpan( void )
 {
 	if (_vec.size() < 2)
 		throw NoSpanException();
+
 	return *std::max_element(_vec.begin(), _vec.end())
 			- *std::min_element(_vec.begin(), _vec.end());
 }

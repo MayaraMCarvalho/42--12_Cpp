@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/08 16:45:17 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/09 15:33:59 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/15 16:06:09 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ class Span
 
 	// Setters ================================================================
 		void	addNumber( int num );
-		void	addMany( std::vector<int>::iterator begin, std::vector<int>::iterator end );
+		void	addMany( std::vector<int>::iterator begin,
+					std::vector<int>::iterator end );
 
 	// Methods ================================================================
 		int		shortestSpan( void );
