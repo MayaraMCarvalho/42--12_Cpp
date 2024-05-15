@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 11:43:55 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/14 17:03:47 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/15 11:17:32 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,7 @@ int main( int argc, char const *argv[] )
 	}
 	catch (std::exception &e)
 	{
-		std::cout << RED;
-		std::cout << RED << "Error: " << e.what() << std::endl;
+		std::cout << RED << "Error: " << e.what();
 		std::cout << RESET << std::endl;
 	}
 

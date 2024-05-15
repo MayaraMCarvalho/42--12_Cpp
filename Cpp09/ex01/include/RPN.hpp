@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 11:42:48 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/14 17:08:31 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/15 15:43:46 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 
 # include <iostream>
 # include <stack>
+# include <algorithm>
+
+# define REGULAR "0123456789 /*-+"
+
+const std::string OPERATOR = "/*-+";
 
 // Color codes as global variables
 const std::string RESET = "\033[0m";
@@ -29,13 +34,45 @@ const std::string GRAY = "\033[37;1m";
 class RPN
 {
 	private:
-		std::stack<int> _numbers;
+		std::stack<double>	_numbers;
+
+	// Methods ================================================================
+		void	_calc(char oper);
 
 	public:
 	// Constructor & Destructor ===============================================
 		RPN( void );
 		~RPN( void );
 	// Exceptions =============================================================
+		class TooFewOperatorsException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class InvalidCharacterException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class DivisionByZeroException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class InvalidExpressionException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
+
+		class OutRangeException : public std::exception
+		{
+			public:
+				virtual const char* what() const throw();
+		};
 
 	// ========================================================================
 		RPN( RPN const &copy );
@@ -43,12 +80,8 @@ class RPN
 	// Operators ==============================================================
 		RPN& operator=( RPN const &other );
 
-	// Getters ================================================================
-
-	// Setters ================================================================
-
 	// Methods ================================================================
-	void	run( std::string argv );
+	void	run( std::string arg );
 };
 
 #endif

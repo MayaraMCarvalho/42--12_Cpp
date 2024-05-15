@@ -54,12 +54,12 @@ echo "[36;1m-1[0m" > ./Test/aleatory3.result
 echo "[31;1mInvalid number of parameters!
 Usage: ./RPN <reverse polish notation>
 [0m" > ./Test/noArgumentError.result
-echo "[36;1m[31;1mError: Number out of permitted range[0m" > ./Test/outOfRangeError.result
-echo "[36;1m[31;1mError: Too few operands[0m" > ./Test/fewOperandsError.result
-echo "[36;1m[31;1mError: Invalid character in expression[0m" > ./Test/invalidCharError.result
-echo "[36;1m[31;1mError: Invalid character in expression[0m" > ./Test/invalidCharSubjectError.result
-echo "[36;1m[31;1mError: Division by zero[0m" > ./Test/divisionByZeroError.result
-echo "[36;1m[31;1mError: Invalid expression[0m" > ./Test/invalidExpressionError.result
+echo "[31;1mError: Number out the allowed range![0m" > ./Test/outOfRangeError.result
+echo "[31;1mError: Too few operators![0m" > ./Test/fewOperandsError.result
+echo "[31;1mError: Invalid character in expression![0m" > ./Test/invalidCharError.result
+echo "[31;1mError: Invalid character in expression![0m" > ./Test/invalidCharSubjectError.result
+echo "[31;1mError: Division by zero![0m" > ./Test/divisionByZeroError.result
+echo "[31;1mError: Invalid expression![0m" > ./Test/invalidExpressionError.result
 
 
 # Initialize counters
@@ -83,9 +83,9 @@ echo "---------------------------------------------------------------"
 echo -en "${gray}"
 echo "${PROGRAM} \"8 9 * 9 - 9 - 9 - 4 - 1 +\""
 echo -e "${blue}---------------------------------------------------------------"
-echo -en "${purple}Output expected: "
+echo -e "${purple}Output expected: "
 cat ./Test/subject1.result
-echo -en "${yellow}Output result: "
+echo -e "${yellow}Output result: "
 ${PROGRAM} "8 9 * 9 - 9 - 9 - 4 - 1 +" > ./Test/subject1.output
 ${PROGRAM} "8 9 * 9 - 9 - 9 - 4 - 1 +"
 echo -e "${blue}---------------------------------------------------------------"
@@ -108,9 +108,9 @@ echo "---------------------------------------------------------------"
 echo -en "${gray}"
 echo "${PROGRAM} \"7 7 * 7 -\""
 echo -e "${blue}---------------------------------------------------------------"
-echo -en "${purple}Output expected: "
+echo -e "${purple}Output expected: "
 cat ./Test/subject2.result
-echo -en "${yellow}Output result: "
+echo -e "${yellow}Output result: "
 ${PROGRAM} "7 7 * 7 -" > ./Test/subject2.output
 ${PROGRAM} "7 7 * 7 -"
 echo -e "${blue}---------------------------------------------------------------"
@@ -134,9 +134,9 @@ echo "---------------------------------------------------------------"
 echo -en "${gray}"
 echo "${PROGRAM} \"1 2 * 2 / 2 * 2 4 - +\""
 echo -e "${blue}---------------------------------------------------------------"
-echo -en "${purple}Output expected: "
+echo -e "${purple}Output expected: "
 cat ./Test/subject3.result
-echo -en "${yellow}Output result: "
+echo -e "${yellow}Output result: "
 ${PROGRAM} "1 2 * 2 / 2 * 2 4 - +" > ./Test/subject3.output
 ${PROGRAM} "1 2 * 2 / 2 * 2 4 - +"
 echo -e "${blue}---------------------------------------------------------------"
@@ -160,9 +160,9 @@ echo "---------------------------------------------------------------"
 echo -en "${gray}"
 echo "${PROGRAM} \"1 6 1 - + 2 / 1 2 + * \""
 echo -e "${blue}---------------------------------------------------------------"
-echo -en "${purple}Output expected: "
+echo -e "${purple}Output expected: "
 cat ./Test/aleatory1.result
-echo -en "${yellow}Output result: "
+echo -e "${yellow}Output result: "
 ${PROGRAM} "1 6 1 - + 2 / 1 2 + * " > ./Test/aleatory1.output
 ${PROGRAM} "1 6 1 - + 2 / 1 2 + * "
 echo -e "${blue}---------------------------------------------------------------"
@@ -186,9 +186,9 @@ echo "---------------------------------------------------------------"
 echo -en "${gray}"
 echo "${PROGRAM} \"5 9 * 3 /\""
 echo -e "${blue}---------------------------------------------------------------"
-echo -en "${purple}Output expected: "
+echo -e "${purple}Output expected: "
 cat ./Test/aleatory2.result
-echo -en "${yellow}Output result: "
+echo -e "${yellow}Output result: "
 ${PROGRAM} "5 9 * 3 /" > ./Test/aleatory2.output
 ${PROGRAM} "5 9 * 3 /"
 echo -e "${blue}"
@@ -212,9 +212,9 @@ echo "---------------------------------------------------------------"
 echo -en "${gray}"
 echo "${PROGRAM} \"2 3 -\""
 echo -e "${blue}---------------------------------------------------------------"
-echo -en "${purple}Output expected: "
+echo -e "${purple}Output expected: "
 cat ./Test/aleatory3.result
-echo -en "${yellow}Output result: "
+echo -e "${yellow}Output result: "
 ${PROGRAM} "2 3 -" > ./Test/aleatory3.output
 ${PROGRAM} "2 3 -"
 echo -e "${blue}---------------------------------------------------------------"
@@ -238,9 +238,9 @@ echo "---------------------------------------------------------------"
 echo -en "${gray}"
 echo "${PROGRAM}"
 echo -e "${blue}---------------------------------------------------------------"
-echo -en "${purple}Output expected: "
+echo -e "${purple}Output expected: "
 cat ./Test/noArgumentError.result
-echo -en "${yellow}Output result: "
+echo -e "${yellow}Output result: "
 ${PROGRAM} > ./Test/noArgumentError.output
 ${PROGRAM}
 echo -e "${blue}---------------------------------------------------------------"
@@ -264,9 +264,9 @@ echo "---------------------------------------------------------------"
 echo -en "${gray}"
 echo "${PROGRAM} \"2 11 +\""
 echo -e "${blue}---------------------------------------------------------------"
-echo -en "${purple}Output expected: "
+echo -e "${purple}Output expected: "
 cat ./Test/outOfRangeError.result
-echo -en "${yellow}Output result: "
+echo -e "${yellow}Output result: "
 ${PROGRAM} "2 11 +" > ./Test/outOfRangeError.output
 ${PROGRAM} "2 11 +"
 echo -e "${blue}---------------------------------------------------------------"
@@ -290,9 +290,9 @@ echo "---------------------------------------------------------------"
 echo -en "${gray}"
 echo "${PROGRAM} \"2 +\""
 echo -e "${blue}---------------------------------------------------------------"
-echo -en "${purple}Output expected: "
+echo -e "${purple}Output expected: "
 cat ./Test/fewOperandsError.result
-echo -en "${yellow}Output result: "
+echo -e "${yellow}Output result: "
 ${PROGRAM} "2 +" > ./Test/fewOperandsError.output
 ${PROGRAM} "2 +"
 echo -e "${blue}---------------------------------------------------------------"
@@ -316,9 +316,9 @@ echo "---------------------------------------------------------------"
 echo -en "${gray}"
 echo "${PROGRAM} \"2 2 %\""
 echo -e "${blue}---------------------------------------------------------------"
-echo -en "${purple}Output expected: "
+echo -e "${purple}Output expected: "
 cat ./Test/invalidCharError.result
-echo -en "${yellow}Output result: "
+echo -e "${yellow}Output result: "
 ${PROGRAM} "2 2 %" > ./Test/invalidCharError.output
 ${PROGRAM} "2 2 %"
 echo -e "${blue}---------------------------------------------------------------"
@@ -342,9 +342,9 @@ echo "---------------------------------------------------------------"
 echo -en "${gray}"
 echo "${PROGRAM} \"(1 + 1)\""
 echo -e "${blue}---------------------------------------------------------------"
-echo -en "${purple}Output expected: "
+echo -e "${purple}Output expected: "
 cat ./Test/invalidCharSubjectError.result
-echo -en "${yellow}Output result: "
+echo -e "${yellow}Output result: "
 ${PROGRAM} "(1 + 1)" > ./Test/invalidCharSubjectError.output
 ${PROGRAM} "(1 + 1)"
 echo -e "${blue}---------------------------------------------------------------"
@@ -368,9 +368,9 @@ echo "---------------------------------------------------------------"
 echo -en "${gray}"
 echo "${PROGRAM} \"2 0 /\""
 echo -e "${blue}---------------------------------------------------------------"
-echo -en "${purple}Output expected: "
+echo -e "${purple}Output expected: "
 cat ./Test/divisionByZeroError.result
-echo -en "${yellow}Output result: "
+echo -e "${yellow}Output result: "
 ${PROGRAM} "2 0 /" > ./Test/divisionByZeroError.output
 ${PROGRAM} "2 0 /"
 echo -e "${blue}---------------------------------------------------------------"
@@ -394,9 +394,9 @@ echo "---------------------------------------------------------------"
 echo -en "${gray}"
 echo "${PROGRAM} \"2 2 2 +\""
 echo -e "${blue}---------------------------------------------------------------"
-echo -en "${purple}Output expected: "
+echo -e "${purple}Output expected: "
 cat ./Test/invalidExpressionError.result
-echo -en "${yellow}Output result: "
+echo -e "${yellow}Output result: "
 ${PROGRAM} "2 2 2 +" > ./Test/invalidExpressionError.output
 ${PROGRAM} "2 2 2 +"
 echo -e "${blue}---------------------------------------------------------------"
