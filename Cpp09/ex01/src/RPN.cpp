@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 11:44:20 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/15 15:56:32 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:05:47 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void RPN::run( std::string arg )
 		else if (OPERATOR.find(arg[i]) != std::string::npos)
 			_calc(arg[i]);
 	}
-	if (_numbers.size() > 1)
+	if (_numbers.size() != 1)
 		throw InvalidExpressionException();
 	std::cout << CYAN << this->_numbers.top() << RESET << std::endl;
 }
