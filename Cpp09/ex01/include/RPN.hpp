@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 11:42:48 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/16 09:45:33 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/16 10:03:55 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ class RPN
 		RPN& operator=( RPN const &other );
 
 	// Methods ================================================================
-	float	run( std::string arg );
+	double	run( std::string arg );
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 11:44:20 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/16 09:46:12 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/16 10:04:08 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ RPN& RPN::operator=( RPN const &other )
 }
 
 // Methods ====================================================================
-float RPN::run( std::string arg )
+double RPN::run( std::string arg )
 {
 	if (arg.find_first_not_of(REGULAR) != std::string::npos)
 		throw InvalidCharacterException();
