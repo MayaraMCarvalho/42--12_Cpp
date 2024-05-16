@@ -409,6 +409,31 @@ if [ $? -eq 0 ]; then
 		echo -e "${red}❌ Failed${reset}"
 	fi
 fi
+
+# Test 14
+((total_tests++))
+echo -e "${blue}--------------------------- Test 14 ---------------------------"
+echo "Test for invalid expression..."
+echo "---------------------------------------------------------------"
+echo -en "${gray}"
+echo "${PROGRAM} \"\""
+echo -e "${blue}---------------------------------------------------------------"
+echo -e "${purple}Output expected: "
+cat ./Test/invalidExpressionError.result
+echo -e "${yellow}Output result: "
+${PROGRAM} "" > ./Test/invalidExpressionError.output
+${PROGRAM} ""
+echo -e "${blue}---------------------------------------------------------------"
+if [ $? -eq 0 ]; then
+	diff_output=$(diff Test/invalidExpressionError.result Test/invalidExpressionError.output)
+	if [ -z "$diff_output" ]; then
+		echo -e "${green}✅ Passed${reset}"
+		((successful_tests++))
+	else
+		echo -e "${red}❌ Failed${reset}"
+	fi
+fi
+
 echo -e "${blue}---------------------------------------------------------------"
 echo "Tests finished..."
 echo -e "---------------------------------------------------------------${reset}"
