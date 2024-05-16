@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 11:43:55 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/15 11:17:32 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/16 09:55:55 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ int main( int argc, char const *argv[] )
 	try
 	{
 		RPN rpn;
-
-		rpn.run(argv[1]);
+		std::cout << CYAN << rpn.run(argv[1]) << RESET << std::endl;
 	}
 	catch (std::exception &e)
 	{

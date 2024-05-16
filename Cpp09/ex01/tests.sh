@@ -54,12 +54,12 @@ echo "[36;1m-1[0m" > ./Test/aleatory3.result
 echo "[31;1mInvalid number of parameters!
 Usage: ./RPN <reverse polish notation>
 [0m" > ./Test/noArgumentError.result
-echo "[31;1mError: Number out the allowed range![0m" > ./Test/outOfRangeError.result
-echo "[31;1mError: Too few operators![0m" > ./Test/fewOperandsError.result
-echo "[31;1mError: Invalid character in expression![0m" > ./Test/invalidCharError.result
-echo "[31;1mError: Invalid character in expression![0m" > ./Test/invalidCharSubjectError.result
-echo "[31;1mError: Division by zero![0m" > ./Test/divisionByZeroError.result
-echo "[31;1mError: Invalid expression![0m" > ./Test/invalidExpressionError.result
+echo "[36;1m[31;1mError: Number out the allowed range![0m" > ./Test/outOfRangeError.result
+echo "[36;1m[31;1mError: Too few operators![0m" > ./Test/fewOperandsError.result
+echo "[36;1m[31;1mError: Invalid character in expression![0m" > ./Test/invalidCharError.result
+echo "[36;1m[31;1mError: Invalid character in expression![0m" > ./Test/invalidCharSubjectError.result
+echo "[36;1m[31;1mError: Division by zero![0m" > ./Test/divisionByZeroError.result
+echo "[36;1m[31;1mError: Invalid expression![0m" > ./Test/invalidExpressionError.result
 
 
 # Initialize counters
