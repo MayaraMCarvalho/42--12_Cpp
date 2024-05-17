@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 16:51:56 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/16 16:52:29 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/17 11:10:46 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 
 int main(int argc, char const *argv[])
 {
-	std::cout << argc << argv[0] << std::endl;
+	PmergeMe	numbers;
+
+	numbers.sort(argc, argv);
 	return 0;
 }
 
