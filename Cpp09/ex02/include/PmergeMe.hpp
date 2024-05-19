@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 16:50:54 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/17 16:25:09 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/19 13:18:47 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <iomanip>
+# include <cerrno>
+# include <climits>
 
 # include <list>
 # include <vector>
@@ -23,6 +25,10 @@
 
 # define LIST "list"
 # define VECTOR "vector"
+
+# define ARG_ERR "Invalid arguments!\nUsage: ./PmergeMe <number1> <number2> ..."
+# define INT_ERR "Invalid arguments!\nUse only integers!!!"
+# define BOUNDS_ERR "Out of bounds!\nUse only positive integers!!!"
 
 // Color codes as global variables
 const std::string RESET = "\033[0m";
@@ -37,29 +43,29 @@ const std::string GRAY = "\033[37;1m";
 class PmergeMe
 {
 	private:
-		std::list<int> _list;
-		std::vector<int> _vector;
+		std::list<int>		_list;
+		std::vector<int>	_vector;
+		double				_timeList;
+		double				_timeVector;
 
 	// Methods ================================================================
 		void	validations(int argc, char const *argv[]);
+		bool	isInteger( std::string const &str );
 		void	getContainers(int argc, char const *argv[]);
 
-		void	sortList();
-		void	sortVector();
+		void	sortList( void );
+		void	sortVector( void );
+
+		void	mergeInsertionSort( std::list<int>& lst );
+		void	insertionSort(std::list<int>& lst);
+		void	merge(std::list<int>& lst, std::list<int>& left, std::list<int>& right);
+
+		void	mergeInsertionSort( std::vector<int>& arr, int left, int right );
+		void	merge( std::vector<int>& arr, int left, int mid, int right );
 
 		void	printList( std::string status );
 		void	printVector( std::string status );
-		void	printTime( std::string type, double time,  size_t size );
-
-
-		template<typename T>
-		void	printContainer(T &cont, std::string status)
-		{
-			std::cout << PURPLE << status << ":\t" << YELLOW;
-			for (typename T::iterator it = cont.begin(); it != cont.end(); it++)
-				std::cout << *it << " ";
-			std::cout << RESET << std::endl;
-		}
+		void	printTime( std::string type );
 
 	public:
 	// Constructor & Destructor ===============================================
