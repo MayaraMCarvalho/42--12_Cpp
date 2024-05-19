@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 16:51:35 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/19 13:26:47 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/19 13:59:32 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,7 +115,8 @@ void PmergeMe::sortVector( void )
 
 void PmergeMe::mergeInsertionSort(std::list<int>& lst)
 {
-	if (lst.size() <= 1) return;
+	if (lst.size() <= 1)
+		return;
 
 	if (lst.size() <= 10)
 		insertionSort(lst);
