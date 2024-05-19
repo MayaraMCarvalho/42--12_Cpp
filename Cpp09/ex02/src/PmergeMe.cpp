@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/16 16:51:35 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/19 13:59:32 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/19 14:04:42 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -295,6 +295,3 @@ void PmergeMe::printVector( std::string status )
 		std::cout << this->_vector[i] << " ";
 	std::cout << RESET << std::endl;
 }
-
-// Exceptions =================================================================
-
