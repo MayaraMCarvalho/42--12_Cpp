@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 16:15:40 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/09 20:59:35 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/17 12:20:35 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -328,7 +328,6 @@ int main( void )
 	MutantStack<char>::iterator ite3 = mstack2.end();
 
 	++it3;
-
 	std::cout << "it: " << *it3 << std::endl;
 
 	std::cout << BLUE << std::endl;
