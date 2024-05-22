@@ -6,7 +6,7 @@
 /*   By: macarval <macarval@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/09 21:18:20 by macarval          #+#    #+#             */
-/*   Updated: 2024/05/13 10:59:41 by macarval         ###   ########.fr       */
+/*   Updated: 2024/05/22 13:45:46 by macarval         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,6 @@ class BitcoinExchange
 			public:
 				virtual const char* what() const throw();
 		};
-
 
 	// Methods ================================================================
 		void	readInput( std::string fileName );
